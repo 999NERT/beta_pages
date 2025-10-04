@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGELKACS - CS2 Settings & Config</title>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>ANGELKACS - CS2 Settings & Configuration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="angelka.png">
 </head>
 <body>
-    <div class="main-wrapper">
+    <div class="page-wrapper">
         <!-- Header -->
-        <header class="site-header">
-            <div class="header-container">
-                <div class="logo">
-                    <h1>ANGEL<span>KACS</span></h1>
-                    <p>PROFESSIONAL CS2 PLAYER</p>
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>ANGEL<span>KACS</span></h1>
+                        <span class="player-tag">PRO PLAYER</span>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Player Profile -->
-        <section class="player-profile">
-            <div class="profile-container">
-                <div class="player-card">
-                    <div class="player-image">
-                        <img src="angelka.png" alt="ANGELKACS" loading="lazy">
-                        <div class="status online"></div>
-                    </div>
-                    <div class="player-info">
-                        <h2>ANGELKACS</h2>
-                        <div class="player-badges">
-                            <span class="badge">AWPer</span>
-                            <span class="badge">Rifler</span>
-                            <span class="badge">IGL</span>
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-card">
+                    <div class="profile-main">
+                        <div class="avatar-container">
+                            <img src="angelka.png" alt="ANGELKACS" width="120" height="120" loading="eager">
+                            <div class="status-indicator online"></div>
                         </div>
-                        <div class="player-stats">
-                            <div class="stat">
-                                <span class="value">2,500+</span>
-                                <span class="label">Hours</span>
-                            </div>
-                            <div class="stat">
-                                <span class="value">Global Elite</span>
-                                <span class="label">Rank</span>
-                            </div>
-                            <div class="stat">
-                                <span class="value">Poland</span>
-                                <span class="label">Country</span>
+                        <div class="profile-info">
+                            <h2 class="player-name">ANGELKACS</h2>
+                            <p class="player-role">CS2 Professional • AWPer</p>
+                            <div class="player-meta">
+                                <div class="meta-item">
+                                    <span class="meta-value">2,500+</span>
+                                    <span class="meta-label">Hours</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-value">Global Elite</span>
+                                    <span class="meta-label">Rank</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-value">Poland</span>
+                                    <span class="meta-label">Country</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,141 +54,139 @@
             </div>
         </section>
 
-        <!-- Settings -->
+        <!-- Settings Grid -->
         <section class="settings-section">
-            <div class="section-header">
-                <h2>Game Settings</h2>
-            </div>
-
-            <div class="settings-grid">
-                <!-- Mouse Settings -->
-                <div class="setting-group">
-                    <h3 class="group-title">
-                        <i class="icon-mouse"></i>
-                        Mouse Settings
-                    </h3>
-                    <div class="settings-list">
-                        <div class="setting-item">
-                            <span class="name">DPI</span>
-                            <span class="value">800</span>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Game Configuration</h2>
+                </div>
+                
+                <div class="settings-grid">
+                    <!-- Mouse Settings -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <h3>Mouse Settings</h3>
                         </div>
-                        <div class="setting-item">
-                            <span class="name">Sensitivity</span>
-                            <span class="value">1.5</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">eDPI</span>
-                            <span class="value">1200</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Zoom Sensitivity</span>
-                            <span class="value">1.0</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Polling Rate</span>
-                            <span class="value">1000 Hz</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Raw Input</span>
-                            <span class="value">On</span>
+                        <div class="card-content">
+                            <div class="config-item">
+                                <span>DPI</span>
+                                <strong>800</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Sensitivity</span>
+                                <strong>1.5</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>eDPI</span>
+                                <strong>1200</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Zoom Sensitivity</span>
+                                <strong>1.0</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Polling Rate</span>
+                                <strong>1000 Hz</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Raw Input</span>
+                                <strong>On</strong>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Video Settings -->
-                <div class="setting-group">
-                    <h3 class="group-title">
-                        <i class="icon-video"></i>
-                        Video Settings
-                    </h3>
-                    <div class="settings-list">
-                        <div class="setting-item">
-                            <span class="name">Resolution</span>
-                            <span class="value">1920x1080</span>
+                    <!-- Video Settings -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <h3>Video Settings</h3>
                         </div>
-                        <div class="setting-item">
-                            <span class="name">Aspect Ratio</span>
-                            <span class="value">16:9</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Display Mode</span>
-                            <span class="value">Fullscreen</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Brightness</span>
-                            <span class="value">120%</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Refresh Rate</span>
-                            <span class="value">144 Hz</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Multisampling</span>
-                            <span class="value">4x MSAA</span>
+                        <div class="card-content">
+                            <div class="config-item">
+                                <span>Resolution</span>
+                                <strong>1920x1080</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Aspect Ratio</span>
+                                <strong>16:9</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Display Mode</span>
+                                <strong>Fullscreen</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Brightness</span>
+                                <strong>120%</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Refresh Rate</span>
+                                <strong>144 Hz</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Multisampling</span>
+                                <strong>4x MSAA</strong>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Crosshair Settings -->
-                <div class="setting-group">
-                    <h3 class="group-title">
-                        <i class="icon-crosshair"></i>
-                        Crosshair Settings
-                    </h3>
-                    <div class="settings-list">
-                        <div class="setting-item">
-                            <span class="name">Style</span>
-                            <span class="value">Classic Static</span>
+                    <!-- Crosshair Settings -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <h3>Crosshair Settings</h3>
                         </div>
-                        <div class="setting-item">
-                            <span class="name">Size</span>
-                            <span class="value">2.5</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Thickness</span>
-                            <span class="value">0.5</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Gap</span>
-                            <span class="value">-2</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Outline</span>
-                            <span class="value">Yes</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Color</span>
-                            <span class="value">Green</span>
+                        <div class="card-content">
+                            <div class="config-item">
+                                <span>Style</span>
+                                <strong>Classic Static</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Size</span>
+                                <strong>2.5</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Thickness</span>
+                                <strong>0.5</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Gap</span>
+                                <strong>-2</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Outline</span>
+                                <strong>Yes</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Color</span>
+                                <strong>Green</strong>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Viewmodel Settings -->
-                <div class="setting-group">
-                    <h3 class="group-title">
-                        <i class="icon-viewmodel"></i>
-                        Viewmodel Settings
-                    </h3>
-                    <div class="settings-list">
-                        <div class="setting-item">
-                            <span class="name">Viewmodel FOV</span>
-                            <span class="value">68</span>
+                    <!-- Viewmodel Settings -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <h3>Viewmodel Settings</h3>
                         </div>
-                        <div class="setting-item">
-                            <span class="name">Offset X</span>
-                            <span class="value">2.5</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Offset Y</span>
-                            <span class="value">0</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Offset Z</span>
-                            <span class="value">-1.5</span>
-                        </div>
-                        <div class="setting-item">
-                            <span class="name">Shift</span>
-                            <span class="value">0.25</span>
+                        <div class="card-content">
+                            <div class="config-item">
+                                <span>Viewmodel FOV</span>
+                                <strong>68</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Offset X</span>
+                                <strong>2.5</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Offset Y</span>
+                                <strong>0</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Offset Z</span>
+                                <strong>-1.5</strong>
+                            </div>
+                            <div class="config-item">
+                                <span>Shift</span>
+                                <strong>0.25</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -197,55 +195,57 @@
 
         <!-- Gear Section -->
         <section class="gear-section">
-            <div class="section-header">
-                <h2>Gear & Equipment</h2>
-            </div>
-
-            <div class="gear-grid">
-                <div class="gear-item">
-                    <div class="gear-icon">🖱️</div>
-                    <div class="gear-info">
-                        <h3>Mouse</h3>
-                        <p>Logitech G Pro X Superlight</p>
-                        <div class="gear-specs">
-                            <span>Wireless</span>
-                            <span>63g</span>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Gear & Equipment</h2>
+                </div>
+                
+                <div class="gear-grid">
+                    <div class="gear-card">
+                        <div class="gear-icon">🖱️</div>
+                        <div class="gear-details">
+                            <h3>Mouse</h3>
+                            <p class="gear-model">Logitech G Pro X Superlight</p>
+                            <div class="gear-specs">
+                                <span class="spec-tag">Wireless</span>
+                                <span class="spec-tag">63g</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="gear-item">
-                    <div class="gear-icon">⌨️</div>
-                    <div class="gear-info">
-                        <h3>Keyboard</h3>
-                        <p>Logitech G Pro X</p>
-                        <div class="gear-specs">
-                            <span>Tenkeyless</span>
-                            <span>GX Blue</span>
+                    <div class="gear-card">
+                        <div class="gear-icon">⌨️</div>
+                        <div class="gear-details">
+                            <h3>Keyboard</h3>
+                            <p class="gear-model">Logitech G Pro X</p>
+                            <div class="gear-specs">
+                                <span class="spec-tag">Tenkeyless</span>
+                                <span class="spec-tag">GX Blue</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="gear-item">
-                    <div class="gear-icon">🎧</div>
-                    <div class="gear-info">
-                        <h3>Headset</h3>
-                        <p>Logitech G Pro X 2</p>
-                        <div class="gear-specs">
-                            <span>Wireless</span>
-                            <span>7.1 Surround</span>
+                    <div class="gear-card">
+                        <div class="gear-icon">🎧</div>
+                        <div class="gear-details">
+                            <h3>Headset</h3>
+                            <p class="gear-model">Logitech G Pro X 2</p>
+                            <div class="gear-specs">
+                                <span class="spec-tag">Wireless</span>
+                                <span class="spec-tag">7.1 Surround</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="gear-item">
-                    <div class="gear-icon">🖥️</div>
-                    <div class="gear-info">
-                        <h3>Monitor</h3>
-                        <p>ASUS TUF VG259QM</p>
-                        <div class="gear-specs">
-                            <span>24.5"</span>
-                            <span>280Hz</span>
+                    <div class="gear-card">
+                        <div class="gear-icon">🖥️</div>
+                        <div class="gear-details">
+                            <h3>Monitor</h3>
+                            <p class="gear-model">ASUS TUF VG259QM</p>
+                            <div class="gear-specs">
+                                <span class="spec-tag">24.5"</span>
+                                <span class="spec-tag">280Hz</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,10 +253,12 @@
         </section>
 
         <!-- Footer -->
-        <footer class="site-footer">
-            <div class="footer-content">
-                <p>&copy; 2025 ANGELKACS. All rights reserved.</p>
-                <p>Business: <a href="mailto:angelka@stormmedia.gg">angelka@stormmedia.gg</a></p>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 ANGELKACS. All rights reserved.</p>
+                    <p>Contact: <a href="mailto:angelka@stormmedia.gg">angelka@stormmedia.gg</a></p>
+                </div>
             </div>
         </footer>
     </div>
