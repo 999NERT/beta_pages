@@ -48,7 +48,7 @@
     }
     
     function setupHoverEffects() {
-        const cards = document.querySelectorAll('.config-card, .gear-card');
+        const cards = document.querySelectorAll('.config-card, .gear-card, .download-card');
         
         cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -66,7 +66,7 @@
         window.addEventListener('load', function() {
             if ('performance' in window) {
                 const navTiming = performance.getEntriesByType('navigation')[0];
-                const loadTime = navTiming.loadEventEnd - navTiming.navigationStart;
+                const loadTime = navTiming.loadEventEnd - performance.timing.navigationStart;
                 console.log('Page loaded in:', Math.round(loadTime) + 'ms');
             }
         });
