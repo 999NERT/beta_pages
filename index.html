@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGELKACS - CS2 Settings</title>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Paytone+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>ANGELKACS - CS2 Settings & Config</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="angelka.png">
 </head>
@@ -14,42 +13,40 @@
         <!-- Header -->
         <header class="site-header">
             <div class="header-container">
-                <div class="logo-section">
-                    <h1 class="logo">ANGEL<span>KACS</span></h1>
-                    <p class="tagline">Professional CS2 Player & Streamer</p>
+                <div class="logo">
+                    <h1>ANGEL<span>KACS</span></h1>
+                    <p>PROFESSIONAL CS2 PLAYER</p>
                 </div>
-                <nav class="main-nav">
-                    <a href="#settings" class="nav-link">Settings</a>
-                    <a href="#gear" class="nav-link">Gear</a>
-                    <a href="#social" class="nav-link">Social</a>
-                    <a href="#partners" class="nav-link">Partners</a>
-                </nav>
             </div>
         </header>
 
         <!-- Player Profile -->
-        <section class="player-section">
-            <div class="profile-card">
-                <div class="player-main">
-                    <div class="player-avatar">
-                        <img src="angelka.png" alt="ANGELKACS" class="avatar-img">
-                        <div class="status-indicator online"></div>
+        <section class="player-profile">
+            <div class="profile-container">
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="angelka.png" alt="ANGELKACS" loading="lazy">
+                        <div class="status online"></div>
                     </div>
                     <div class="player-info">
-                        <h2 class="player-name">ANGELKACS</h2>
-                        <p class="player-title">CS2 Professional • Content Creator</p>
+                        <h2>ANGELKACS</h2>
+                        <div class="player-badges">
+                            <span class="badge">AWPer</span>
+                            <span class="badge">Rifler</span>
+                            <span class="badge">IGL</span>
+                        </div>
                         <div class="player-stats">
                             <div class="stat">
-                                <span class="stat-value">2,500+</span>
-                                <span class="stat-label">Hours</span>
+                                <span class="value">2,500+</span>
+                                <span class="label">Hours</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-value">Global Elite</span>
-                                <span class="stat-label">Rank</span>
+                                <span class="value">Global Elite</span>
+                                <span class="label">Rank</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-value">Poland</span>
-                                <span class="stat-label">Country</span>
+                                <span class="value">Poland</span>
+                                <span class="label">Country</span>
                             </div>
                         </div>
                     </div>
@@ -57,123 +54,141 @@
             </div>
         </section>
 
-        <!-- Settings Sections -->
-        <section id="settings" class="settings-section">
-            <h2 class="section-title">Game Settings</h2>
-            
+        <!-- Settings -->
+        <section class="settings-section">
+            <div class="section-header">
+                <h2>Game Settings</h2>
+            </div>
+
             <div class="settings-grid">
                 <!-- Mouse Settings -->
-                <div class="setting-category">
-                    <div class="category-header">
-                        <i class="fas fa-mouse"></i>
-                        <h3>Mouse Settings</h3>
-                    </div>
+                <div class="setting-group">
+                    <h3 class="group-title">
+                        <i class="icon-mouse"></i>
+                        Mouse Settings
+                    </h3>
                     <div class="settings-list">
                         <div class="setting-item">
-                            <span class="setting-name">DPI</span>
-                            <span class="setting-value">800</span>
+                            <span class="name">DPI</span>
+                            <span class="value">800</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Sensitivity</span>
-                            <span class="setting-value">1.5</span>
+                            <span class="name">Sensitivity</span>
+                            <span class="value">1.5</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">eDPI</span>
-                            <span class="setting-value">1200</span>
+                            <span class="name">eDPI</span>
+                            <span class="value">1200</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Zoom Sensitivity</span>
-                            <span class="setting-value">1.0</span>
+                            <span class="name">Zoom Sensitivity</span>
+                            <span class="value">1.0</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Polling Rate</span>
-                            <span class="setting-value">1000 Hz</span>
+                            <span class="name">Polling Rate</span>
+                            <span class="value">1000 Hz</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="name">Raw Input</span>
+                            <span class="value">On</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Video Settings -->
-                <div class="setting-category">
-                    <div class="category-header">
-                        <i class="fas fa-desktop"></i>
-                        <h3>Video Settings</h3>
-                    </div>
+                <div class="setting-group">
+                    <h3 class="group-title">
+                        <i class="icon-video"></i>
+                        Video Settings
+                    </h3>
                     <div class="settings-list">
                         <div class="setting-item">
-                            <span class="setting-name">Resolution</span>
-                            <span class="setting-value">1920x1080</span>
+                            <span class="name">Resolution</span>
+                            <span class="value">1920x1080</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Aspect Ratio</span>
-                            <span class="setting-value">16:9</span>
+                            <span class="name">Aspect Ratio</span>
+                            <span class="value">16:9</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Display Mode</span>
-                            <span class="setting-value">Fullscreen</span>
+                            <span class="name">Display Mode</span>
+                            <span class="value">Fullscreen</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Brightness</span>
-                            <span class="setting-value">120%</span>
+                            <span class="name">Brightness</span>
+                            <span class="value">120%</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Refresh Rate</span>
-                            <span class="setting-value">144 Hz</span>
+                            <span class="name">Refresh Rate</span>
+                            <span class="value">144 Hz</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="name">Multisampling</span>
+                            <span class="value">4x MSAA</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Crosshair Settings -->
-                <div class="setting-category">
-                    <div class="category-header">
-                        <i class="fas fa-crosshairs"></i>
-                        <h3>Crosshair Settings</h3>
-                    </div>
+                <div class="setting-group">
+                    <h3 class="group-title">
+                        <i class="icon-crosshair"></i>
+                        Crosshair Settings
+                    </h3>
                     <div class="settings-list">
                         <div class="setting-item">
-                            <span class="setting-name">Style</span>
-                            <span class="setting-value">Classic</span>
+                            <span class="name">Style</span>
+                            <span class="value">Classic Static</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Size</span>
-                            <span class="setting-value">2.5</span>
+                            <span class="name">Size</span>
+                            <span class="value">2.5</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Thickness</span>
-                            <span class="setting-value">0.5</span>
+                            <span class="name">Thickness</span>
+                            <span class="value">0.5</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Gap</span>
-                            <span class="setting-value">-2</span>
+                            <span class="name">Gap</span>
+                            <span class="value">-2</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Color</span>
-                            <span class="setting-value">Green</span>
+                            <span class="name">Outline</span>
+                            <span class="value">Yes</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="name">Color</span>
+                            <span class="value">Green</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Viewmodel Settings -->
-                <div class="setting-category">
-                    <div class="category-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Viewmodel Settings</h3>
-                    </div>
+                <div class="setting-group">
+                    <h3 class="group-title">
+                        <i class="icon-viewmodel"></i>
+                        Viewmodel Settings
+                    </h3>
                     <div class="settings-list">
                         <div class="setting-item">
-                            <span class="setting-name">FOV</span>
-                            <span class="setting-value">68</span>
+                            <span class="name">Viewmodel FOV</span>
+                            <span class="value">68</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Offset X</span>
-                            <span class="setting-value">2.5</span>
+                            <span class="name">Offset X</span>
+                            <span class="value">2.5</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Offset Y</span>
-                            <span class="setting-value">0</span>
+                            <span class="name">Offset Y</span>
+                            <span class="value">0</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-name">Offset Z</span>
-                            <span class="setting-value">-1.5</span>
+                            <span class="name">Offset Z</span>
+                            <span class="value">-1.5</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="name">Shift</span>
+                            <span class="value">0.25</span>
                         </div>
                     </div>
                 </div>
@@ -181,149 +196,58 @@
         </section>
 
         <!-- Gear Section -->
-        <section id="gear" class="gear-section">
-            <h2 class="section-title">Gear & Equipment</h2>
-            
+        <section class="gear-section">
+            <div class="section-header">
+                <h2>Gear & Equipment</h2>
+            </div>
+
             <div class="gear-grid">
                 <div class="gear-item">
-                    <div class="gear-icon">
-                        <i class="fas fa-mouse"></i>
-                    </div>
+                    <div class="gear-icon">🖱️</div>
                     <div class="gear-info">
-                        <h3 class="gear-category">Mouse</h3>
-                        <p class="gear-name">Logitech G Pro X Superlight</p>
+                        <h3>Mouse</h3>
+                        <p>Logitech G Pro X Superlight</p>
                         <div class="gear-specs">
-                            <span class="spec-tag">Wireless</span>
-                            <span class="spec-tag">63g</span>
+                            <span>Wireless</span>
+                            <span>63g</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="gear-item">
-                    <div class="gear-icon">
-                        <i class="fas fa-keyboard"></i>
-                    </div>
+                    <div class="gear-icon">⌨️</div>
                     <div class="gear-info">
-                        <h3 class="gear-category">Keyboard</h3>
-                        <p class="gear-name">Logitech G Pro X</p>
+                        <h3>Keyboard</h3>
+                        <p>Logitech G Pro X</p>
                         <div class="gear-specs">
-                            <span class="spec-tag">Tenkeyless</span>
-                            <span class="spec-tag">GX Blue</span>
+                            <span>Tenkeyless</span>
+                            <span>GX Blue</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="gear-item">
-                    <div class="gear-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
+                    <div class="gear-icon">🎧</div>
                     <div class="gear-info">
-                        <h3 class="gear-category">Headset</h3>
-                        <p class="gear-name">Logitech G Pro X 2</p>
+                        <h3>Headset</h3>
+                        <p>Logitech G Pro X 2</p>
                         <div class="gear-specs">
-                            <span class="spec-tag">Wireless</span>
-                            <span class="spec-tag">7.1 Surround</span>
+                            <span>Wireless</span>
+                            <span>7.1 Surround</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="gear-item">
-                    <div class="gear-icon">
-                        <i class="fas fa-tv"></i>
-                    </div>
+                    <div class="gear-icon">🖥️</div>
                     <div class="gear-info">
-                        <h3 class="gear-category">Monitor</h3>
-                        <p class="gear-name">ASUS TUF VG259QM</p>
+                        <h3>Monitor</h3>
+                        <p>ASUS TUF VG259QM</p>
                         <div class="gear-specs">
-                            <span class="spec-tag">24.5"</span>
-                            <span class="spec-tag">280Hz</span>
+                            <span>24.5"</span>
+                            <span>280Hz</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Section -->
-        <section id="social" class="social-section">
-            <h2 class="section-title">Connect With Me</h2>
-            
-            <div class="social-grid">
-                <a href="https://www.twitch.tv/angelkacs" class="social-card twitch" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-twitch"></i>
-                    </div>
-                    <div class="social-info">
-                        <h3>Twitch</h3>
-                        <p>Live Streaming</p>
-                        <span class="live-status offline">OFFLINE</span>
-                    </div>
-                </a>
-
-                <a href="https://discord.gg/rKGKQbuBxm" class="social-card discord" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-discord"></i>
-                    </div>
-                    <div class="social-info">
-                        <h3>Discord</h3>
-                        <p>Community</p>
-                        <span class="join-text">JOIN</span>
-                    </div>
-                </a>
-
-                <a href="https://www.youtube.com/@angelkacs" class="social-card youtube" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <div class="social-info">
-                        <h3>YouTube</h3>
-                        <p>Content & Highlights</p>
-                        <span class="subscribe-text">SUBSCRIBE</span>
-                    </div>
-                </a>
-
-                <a href="https://x.com/angelkaacs" class="social-card twitter" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <div class="social-info">
-                        <h3>Twitter</h3>
-                        <p>Updates & News</p>
-                        <span class="follow-text">FOLLOW</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Partners Section -->
-        <section id="partners" class="partners-section">
-            <h2 class="section-title">Partners & Sponsors</h2>
-            
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Logitech G</h3>
-                    <p>Official Gear Partner</p>
-                    <span class="discount-code">Code: ANGELKACS</span>
-                </div>
-
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>CSGOSKINS</h3>
-                    <p>Skin Trading Platform</p>
-                    <span class="discount-code">Code: ANGELKACS</span>
-                </div>
-
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3>PIRATESWAP</h3>
-                    <p>Crypto Exchange</p>
-                    <span class="discount-code">Code: ANGELKACS</span>
                 </div>
             </div>
         </section>
@@ -331,25 +255,8 @@
         <!-- Footer -->
         <footer class="site-footer">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>ANGELKACS</h4>
-                    <p>Professional CS2 Player & Content Creator</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="footer-links">
-                        <a href="https://twitch.tv/angelkacs">Twitch</a>
-                        <a href="https://youtube.com/@angelkacs">YouTube</a>
-                        <a href="https://discord.gg/rKGKQbuBxm">Discord</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Business</h4>
-                    <a href="mailto:angelka@stormmedia.gg" class="email-link">angelka@stormmedia.gg</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
                 <p>&copy; 2025 ANGELKACS. All rights reserved.</p>
+                <p>Business: <a href="mailto:angelka@stormmedia.gg">angelka@stormmedia.gg</a></p>
             </div>
         </footer>
     </div>
