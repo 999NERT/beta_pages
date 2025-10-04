@@ -57,12 +57,3 @@
     }, { passive: true });
     
 })();
-
-// Service Worker for caching (optional - uncomment if needed)
-/*
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js');
-    });
-}
-*/
