@@ -217,7 +217,7 @@ body {
 }
 
 .card-content {
-    padding: 1.5rem;
+    padding: 1rem 1.5rem 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -227,15 +227,16 @@ body {
 .settings-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    gap: 0.3rem 1rem;
 }
 
 .setting-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 35px;
 }
 
 .setting-group:last-child {
@@ -245,21 +246,24 @@ body {
 .setting-name {
     color: #aaa;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.3;
+    white-space: nowrap;
+    margin-right: 0.8rem;
 }
 
 .setting-value {
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background: none;
     border-left: none;
     min-height: auto;
     padding: 0;
     text-align: right;
+    white-space: nowrap;
 }
 
 /* === LAUNCH OPTIONS CARD === */
@@ -502,6 +506,12 @@ body {
     
     .settings-row {
         grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .setting-group {
+        min-height: 30px;
+        padding: 0.4rem 0;
     }
     
     .gear-grid {
@@ -548,7 +558,7 @@ body {
     }
     
     .card-content {
-        padding: 1.2rem;
+        padding: 0.8rem 1.2rem 1.2rem;
     }
     
     .download-btn {
@@ -557,11 +567,11 @@ body {
     }
     
     .setting-name {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .setting-value {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
