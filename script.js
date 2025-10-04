@@ -1,4 +1,4 @@
-// Navigation system for switching sections
+// Navigation system for switching sections and copy functionality
 (function() {
     'use strict';
     
@@ -12,6 +12,9 @@
     function init() {
         // Initialize navigation system
         setupNavigation();
+        
+        // Setup copy functionality
+        setupCopyButtons();
         
         // Setup hover effects
         setupHoverEffects();
@@ -45,6 +48,39 @@
         
         // Set initial active section (game-section)
         document.getElementById('game-section').classList.add('active-section');
+    }
+    
+    function setupCopyButtons() {
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const launchOptionsText = this.parentNode.querySelector('.launch-options-text').textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(launchOptionsText).then(() => {
+                    // Visual feedback
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    `;
+                    this.style.background = '#00ff00';
+                    this.style.borderColor = '#00ff00';
+                    this.style.color = '#000';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                        this.style.background = '';
+                        this.style.borderColor = '';
+                        this.style.color = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+        });
     }
     
     function setupHoverEffects() {
