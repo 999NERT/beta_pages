@@ -1,4 +1,4 @@
-// Ultra lightweight JavaScript for performance
+// Navigation system for switching sections
 (function() {
     'use strict';
     
@@ -10,15 +10,45 @@
     }
     
     function init() {
-        // Minimal hover effects
+        // Initialize navigation system
+        setupNavigation();
+        
+        // Setup hover effects
         setupHoverEffects();
         
         // Performance monitoring
         monitorPerformance();
     }
     
+    function setupNavigation() {
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.settings-section');
+        
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetSection = this.getAttribute('data-section');
+                
+                // Remove active class from all buttons and sections
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active-section'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show target section
+                const targetElement = document.getElementById(targetSection + '-section');
+                if (targetElement) {
+                    targetElement.classList.add('active-section');
+                }
+            });
+        });
+        
+        // Set initial active section (game-section)
+        document.getElementById('game-section').classList.add('active-section');
+    }
+    
     function setupHoverEffects() {
-        const cards = document.querySelectorAll('.compact-card, .gear-card');
+        const cards = document.querySelectorAll('.config-card, .gear-card');
         
         cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -47,7 +77,6 @@
     window.addEventListener('scroll', function() {
         if (!ticking) {
             requestAnimationFrame(function() {
-                // Add any scroll-based effects here if needed
                 ticking = false;
             });
             ticking = true;
