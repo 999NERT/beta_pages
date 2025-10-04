@@ -174,9 +174,9 @@ body {
 /* === EQUAL COLUMNS GRID LAYOUT === */
 .equal-columns-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    align-items: stretch;
+    align-items: start;
 }
 
 .equal-card {
@@ -223,18 +223,23 @@ body {
     flex-direction: column;
 }
 
-/* === SETTINGS GRID LAYOUT === */
-.settings-grid {
+/* === SETTINGS ROW LAYOUT (NOW 2-COLUMN GRID) === */
+.settings-row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
 }
 
 .setting-group {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-group:last-child {
+    border-bottom: none;
 }
 
 .setting-name {
@@ -244,23 +249,17 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.3;
-    word-break: break-word;
-    overflow-wrap: break-word;
 }
 
 .setting-value {
     color: #ffffff;
     font-weight: 700;
     font-size: 1.1rem;
-    background: rgba(174, 166, 253, 0.1);
-    padding: 0.8rem 1rem;
-    border-radius: 6px;
-    border-left: 3px solid #AEA6FD;
-    min-height: 55px;
-    display: flex;
-    align-items: center;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    background: none;
+    border-left: none;
+    min-height: auto;
+    padding: 0;
+    text-align: right;
 }
 
 /* === LAUNCH OPTIONS CARD === */
@@ -501,7 +500,7 @@ body {
         font-size: 1.6rem;
     }
     
-    .settings-grid {
+    .settings-row {
         grid-template-columns: 1fr;
     }
     
@@ -563,19 +562,11 @@ body {
     
     .setting-value {
         font-size: 1rem;
-        padding: 0.6rem 0.8rem;
-        min-height: 50px;
     }
 }
 
 /* === ENHANCED GRID FOR LARGER SCREENS === */
 @media (min-width: 1200px) {
-    .equal-columns-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
     .equal-columns-grid {
         grid-template-columns: repeat(2, 1fr);
     }
