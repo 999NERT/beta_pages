@@ -207,34 +207,45 @@ body {
 }
 
 .card-content {
-    padding: 0.8rem 1.2rem;
+    padding: 1rem;
 }
 
-.config-item {
+/* === NEW SETTINGS ROW LAYOUT === */
+.settings-row {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.3);
 }
 
-.config-item:last-child {
-    border-bottom: none;
+.setting-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.config-item span {
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.setting-name {
     color: #aaa;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
-.config-item strong {
+.setting-value {
     color: #ffffff;
     font-weight: 700;
+    font-size: 0.9rem;
     background: rgba(174, 166, 253, 0.1);
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 4px;
-    font-size: 0.85rem;
+    border-left: 2px solid #AEA6FD;
 }
 
 /* === LAUNCH OPTIONS CARD === */
@@ -242,23 +253,47 @@ body {
     grid-column: 1 / -1;
 }
 
-.config-item-full {
+.launch-options-container {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.75rem 0;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(174, 166, 253, 0.1);
+    border: 1px solid rgba(174, 166, 253, 0.3);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
 }
 
-.config-item-full strong {
+.launch-options-text {
     color: #AEA6FD;
     font-weight: 700;
-    background: rgba(174, 166, 253, 0.1);
-    padding: 0.8rem 1rem;
-    border-radius: 6px;
     font-size: 0.85rem;
     word-break: break-all;
     font-family: monospace;
-    text-align: center;
+    flex: 1;
+}
+
+.copy-btn {
+    background: rgba(174, 166, 253, 0.2);
+    border: 1px solid #AEA6FD;
+    color: #AEA6FD;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: rgba(174, 166, 253, 0.3);
+    transform: scale(1.05);
+}
+
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 /* === DOWNLOAD SECTION === */
@@ -449,6 +484,15 @@ body {
         font-size: 1.3rem;
     }
     
+    .settings-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .setting-column {
+        gap: 0.5rem;
+    }
+    
     .gear-grid {
         grid-template-columns: 1fr;
     }
@@ -470,6 +514,17 @@ body {
     .launch-card {
         grid-column: 1;
     }
+    
+    .launch-options-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    
+    .copy-btn {
+        align-self: flex-end;
+        width: fit-content;
+    }
 }
 
 @media (max-width: 480px) {
@@ -481,25 +536,22 @@ body {
         font-size: 1.4rem;
     }
     
-    .config-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.2rem;
-        padding: 0.5rem 0;
-    }
-    
     .card-content {
-        padding: 0.6rem 1rem;
-    }
-    
-    .config-item-full strong {
-        font-size: 0.8rem;
-        padding: 0.6rem 0.8rem;
+        padding: 0.75rem;
     }
     
     .download-btn {
         padding: 0.6rem 1rem;
         font-size: 0.8rem;
+    }
+    
+    .setting-name {
+        font-size: 0.75rem;
+    }
+    
+    .setting-value {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
     }
 }
 
