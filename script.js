@@ -18,17 +18,15 @@
     }
     
     function setupHoverEffects() {
-        const cards = document.querySelectorAll('.config-card, .gear-card');
+        const cards = document.querySelectorAll('.compact-card, .gear-card');
         
         cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.borderColor = '#AEA6FD';
-                this.style.transform = 'translateY(-2px)';
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.borderColor = '#333';
-                this.style.transform = 'translateY(0)';
             });
         });
     }
