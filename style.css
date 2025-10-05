@@ -282,6 +282,42 @@ body {
     padding-bottom: 1rem;
 }
 
+/* === GPU SETTINGS SECTION === */
+.gpu-settings-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gpu-section-title {
+    color: #AEA6FD;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.gpu-section-title::before,
+.gpu-section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.gpu-section-title::before {
+    left: 0;
+}
+
+.gpu-section-title::after {
+    right: 0;
+}
+
 /* === LAUNCH OPTIONS CARD === */
 .launch-card {
     grid-column: 1 / -1;
