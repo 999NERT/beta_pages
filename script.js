@@ -16,7 +16,7 @@
         // Setup copy functionality for all copy buttons
         setupCopyButtons();
         
-        // Setup hover effects (lightweight)
+        // Setup hover effects
         setupHoverEffects();
         
         // Initialize crosshair preview
