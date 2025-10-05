@@ -268,6 +268,42 @@ body {
     white-space: nowrap;
 }
 
+/* === SETTINGS SEPARATOR === */
+.settings-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 1rem 0;
+    width: 100%;
+}
+
+/* === GPU SETTINGS CARD OPTIMIZATION === */
+.gpu-settings-card .setting-name {
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.2;
+    margin-right: 0.5rem;
+}
+
+.gpu-settings-card .setting-value {
+    font-size: 0.95rem;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.gpu-settings-card .settings-row {
+    gap: 0.4rem 0.8rem;
+}
+
+.gpu-settings-card .setting-group {
+    min-height: 45px;
+    align-items: flex-start;
+    padding: 0.6rem 0;
+}
+
 /* === CARD CONTENT OPTIMIZATION === */
 .config-card:has(.settings-row:only-child) .card-content {
     padding-bottom: 1rem;
@@ -528,6 +564,24 @@ body {
     .setting-group {
         min-height: 35px;
         padding: 0.6rem 0;
+    }
+    
+    .gpu-settings-card .settings-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .gpu-settings-card .setting-group {
+        min-height: auto;
+        align-items: center;
+    }
+    
+    .gpu-settings-card .setting-name {
+        font-size: 0.85rem;
+    }
+    
+    .gpu-settings-card .setting-value {
+        font-size: 0.9rem;
+        text-align: right;
     }
     
     .gear-grid {
