@@ -236,9 +236,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7rem 0;
+    padding: 0.8rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    min-height: 40px;
+    min-height: 45px;
 }
 
 .setting-group:last-child {
@@ -247,8 +247,8 @@ body {
 
 .setting-name {
     color: #aaa;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.3;
@@ -258,8 +258,8 @@ body {
 
 .setting-value {
     color: #ffffff;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 800;
+    font-size: 1.15rem;
     background: none;
     border-left: none;
     min-height: auto;
@@ -268,17 +268,99 @@ body {
     white-space: nowrap;
 }
 
+/* === COMMANDS CONTAINER === */
+.commands-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(174, 166, 253, 0.1);
+    border: 1px solid rgba(174, 166, 253, 0.3);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-top: 1.2rem;
+    flex: 1;
+}
+
+.commands-text {
+    color: #AEA6FD;
+    font-weight: 700;
+    font-size: 0.95rem;
+    word-break: break-all;
+    font-family: monospace;
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* === CROSSHAIR PREVIEW === */
+.crosshair-preview {
+    margin-top: 1.2rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.crosshair-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background: radial-gradient(circle, rgba(40, 40, 40, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.crosshair {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.crosshair::before,
+.crosshair::after {
+    content: '';
+    position: absolute;
+    background: #00ff00;
+}
+
+.crosshair::before {
+    width: 2px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.crosshair::after {
+    width: 20px;
+    height: 2px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preview-label {
+    color: #AEA6FD;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* === SETTINGS SEPARATOR === */
 .settings-separator {
     height: 1px;
     background: rgba(255, 255, 255, 0.15);
-    margin: 1rem 0;
+    margin: 1.2rem 0;
     width: 100%;
 }
 
-/* === GPU SETTINGS CARD OPTIMIZATION === */
+/* === GPU SETTINGS OPTIMIZATION === */
 .gpu-settings-card .setting-name {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     white-space: normal;
     word-break: break-word;
     line-height: 1.2;
@@ -286,36 +368,26 @@ body {
 }
 
 .gpu-settings-card .setting-value {
-    font-size: 0.95rem;
+    font-size: 1rem;
     white-space: normal;
     word-break: break-word;
     text-align: left;
-    min-width: 120px;
+    min-width: 100px;
     flex-shrink: 0;
 }
 
 .gpu-settings-card .settings-row {
-    gap: 0.4rem 0.8rem;
+    gap: 0.5rem 0.8rem;
 }
 
 .gpu-settings-card .setting-group {
-    min-height: 45px;
+    min-height: 50px;
     align-items: flex-start;
-    padding: 0.6rem 0;
+    padding: 0.7rem 0;
 }
 
-/* === CARD CONTENT OPTIMIZATION === */
-.config-card:has(.settings-row:only-child) .card-content {
-    padding-bottom: 1rem;
-}
-
-#hud-section .settings-row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-}
-
-#hud-section .config-card .card-content {
-    padding-bottom: 1rem;
+.optimized-gpu-settings .setting-name {
+    font-size: 0.92rem;
 }
 
 /* === LAUNCH OPTIONS CARD === */
@@ -562,8 +634,8 @@ body {
     }
     
     .setting-group {
-        min-height: 35px;
-        padding: 0.6rem 0;
+        min-height: 40px;
+        padding: 0.7rem 0;
     }
     
     .gpu-settings-card .settings-row {
@@ -576,11 +648,11 @@ body {
     }
     
     .gpu-settings-card .setting-name {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
     
     .gpu-settings-card .setting-value {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         text-align: right;
     }
     
@@ -612,6 +684,12 @@ body {
         gap: 1rem;
     }
     
+    .commands-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
     .copy-btn {
         align-self: flex-end;
         width: fit-content;
@@ -637,11 +715,11 @@ body {
     }
     
     .setting-name {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
     
     .setting-value {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 }
 
