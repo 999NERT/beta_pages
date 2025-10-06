@@ -281,6 +281,35 @@ body {
     flex-shrink: 0;
 }
 
+/* === OPTIMIZED VIDEO SETTINGS === */
+.optimized-video-settings .setting-name {
+    font-size: 1rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.2;
+    margin-right: 0.8rem;
+    text-align: left;
+}
+
+.optimized-video-settings .setting-value {
+    font-size: 1.05rem;
+    white-space: normal;
+    word-break: break-word;
+    text-align: right;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.optimized-video-settings .settings-row {
+    gap: 0.6rem 1rem;
+}
+
+.optimized-video-settings .setting-group {
+    min-height: 55px;
+    align-items: center;
+    padding: 0.8rem 0;
+}
+
 /* === WHITE COMMANDS STYLES === */
 .white-commands {
     background: rgba(255, 255, 255, 0.95) !important;
@@ -323,10 +352,6 @@ body {
 }
 
 /* === CROSSHAIR PREVIEW === */
-.crosshair-card {
-    grid-column: 1 / -1;
-}
-
 .crosshair-preview {
     margin-top: 1.2rem;
     text-align: center;
@@ -395,7 +420,7 @@ body {
 
 /* === GPU SETTINGS OPTIMIZATION === */
 .gpu-settings-card .setting-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
     white-space: normal;
     word-break: break-word;
     line-height: 1.2;
@@ -404,11 +429,11 @@ body {
 }
 
 .gpu-settings-card .setting-value {
-    font-size: 1.05rem;
+    font-size: 1rem;
     white-space: normal;
     word-break: break-word;
     text-align: right;
-    min-width: 120px;
+    min-width: 110px;
     flex-shrink: 0;
 }
 
@@ -417,13 +442,13 @@ body {
 }
 
 .gpu-settings-card .setting-group {
-    min-height: 55px;
+    min-height: 50px;
     align-items: center;
     padding: 0.8rem 0;
 }
 
 .optimized-gpu-settings .setting-name {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 /* === LAUNCH OPTIONS CARD === */
