@@ -296,6 +296,90 @@ body {
     letter-spacing: 1px;
 }
 
+/* === GEAR CATEGORIES === */
+.gear-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.gear-category {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.setup-header {
+    background: linear-gradient(135deg, rgba(174, 166, 253, 0.2), rgba(174, 166, 253, 0.1)) !important;
+    border-bottom: 2px solid #AEA6FD !important;
+    text-align: center;
+}
+
+.setup-header h3 {
+    color: #AEA6FD !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.pc-header {
+    background: linear-gradient(135deg, rgba(255, 87, 87, 0.2), rgba(255, 87, 87, 0.1)) !important;
+    border-bottom: 2px solid #ff5757 !important;
+    text-align: center;
+}
+
+.pc-header h3 {
+    color: #ff5757 !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.gear-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.gear-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 45px;
+}
+
+.gear-item:last-child {
+    border-bottom: none;
+}
+
+.gear-item-name {
+    color: #aaa;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.gear-item-value {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    background: none;
+    padding: 0;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 /* === CONFIG CARDS === */
 .config-card {
     background: rgba(18, 18, 18, 0.95);
@@ -583,65 +667,6 @@ body {
     font-size: 1.3rem;
 }
 
-/* === GEAR SECTION === */
-.gear-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.gear-card {
-    background: rgba(18, 18, 18, 0.95);
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.2s ease;
-}
-
-.gear-card:hover {
-    border-color: #444;
-    transform: translateY(-3px);
-}
-
-.gear-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-    width: 50px;
-    text-align: center;
-}
-
-.gear-details h3 {
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-}
-
-.gear-model {
-    color: #AEA6FD;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-}
-
-.gear-specs {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.spec-tag {
-    background: rgba(174, 166, 253, 0.15);
-    color: #AEA6FD;
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
 /* === FOOTER === */
 .footer {
     background: rgba(12, 12, 12, 0.98);
@@ -683,6 +708,10 @@ body {
 @media (max-width: 1400px) {
     .video-columns-grid {
         grid-template-columns: repeat(2, minmax(400px, 1fr));
+    }
+    
+    .gear-categories-grid {
+        grid-template-columns: repeat(2, minmax(350px, 1fr));
     }
 }
 
@@ -731,6 +760,10 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .gear-categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .section-header h2 {
         font-size: 1.6rem;
     }
@@ -759,18 +792,17 @@ body {
         font-size: 0.95rem;
     }
     
-    .gear-grid {
-        grid-template-columns: 1fr;
+    .gear-item {
+        min-height: 40px;
+        padding: 0.6rem 0;
     }
     
-    .gear-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.8rem;
+    .gear-item-name {
+        font-size: 0.9rem;
     }
     
-    .gear-icon {
-        width: auto;
+    .gear-item-value {
+        font-size: 0.95rem;
     }
     
     .download-card {
@@ -834,6 +866,18 @@ body {
     }
     
     .video-setting-value {
+        align-self: flex-end;
+    }
+    
+    .gear-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        min-height: auto;
+        padding: 0.8rem 0;
+    }
+    
+    .gear-item-value {
         align-self: flex-end;
     }
 }
