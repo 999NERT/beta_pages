@@ -188,12 +188,12 @@ body {
 
 /* === VIDEO GRID === */
 .video-grid {
-    grid-template-columns: repeat(2, minmax(500px, 1fr));
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
     gap: 2rem;
 }
 
 .video-grid .config-card {
-    min-width: 500px;
+    min-width: 400px;
 }
 
 /* === CONFIG CARDS === */
@@ -652,7 +652,7 @@ body {
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1200px) {
     .video-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .video-grid .config-card {
