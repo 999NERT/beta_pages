@@ -240,17 +240,46 @@ body {
     text-align: right;
     white-space: nowrap;
     flex-shrink: 0;
+    text-transform: uppercase;
 }
 
 /* === VIDEO SETTINGS HEADER STYLES === */
-.advanced-video-header {
+.video-cs2-header {
     background: linear-gradient(135deg, rgba(68, 205, 255, 0.2), rgba(68, 205, 255, 0.1)) !important;
     border-bottom: 2px solid #44cdff !important;
     text-align: center;
 }
 
-.advanced-video-header h3 {
+.video-cs2-header h3 {
     color: #44cdff !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.advanced-video-header {
+    background: linear-gradient(135deg, rgba(0, 255, 67, 0.2), rgba(0, 255, 67, 0.1)) !important;
+    border-bottom: 2px solid #00ff43 !important;
+    text-align: center;
+}
+
+.advanced-video-header h3 {
+    color: #00ff43 !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.threed-settings-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1)) !important;
+    border-bottom: 2px solid #ffd700 !important;
+    text-align: center;
+}
+
+.threed-settings-header h3 {
+    color: #ffd700 !important;
     font-size: 1.4rem !important;
     font-weight: 900 !important;
     text-align: center;
