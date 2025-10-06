@@ -173,7 +173,7 @@
     
     function setupHoverEffects() {
         // Lightweight hover effects only
-        const cards = document.querySelectorAll('.config-card, .gear-card');
+        const cards = document.querySelectorAll('.config-card, .gear-category');
         
         cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
