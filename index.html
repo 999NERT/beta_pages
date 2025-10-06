@@ -44,7 +44,7 @@
                 <div class="nav-buttons">
                     <button class="nav-btn active" data-section="game">GAME</button>
                     <button class="nav-btn" data-section="video">VIDEO</button>
-                    <button class="nav-btn" data-section="hud">HUD/RADAR</button>
+                    <button class="nav-btn" data-section="gear">GEAR</button>
                 </div>
             </div>
         </section>
@@ -146,7 +146,7 @@
                     </div>
 
                     <!-- Crosshair Settings -->
-                    <div class="config-card equal-card crosshair-card">
+                    <div class="config-card equal-card">
                         <div class="card-header">
                             <h3>Crosshair Settings</h3>
                         </div>
@@ -199,6 +199,45 @@
                         </div>
                     </div>
 
+                    <!-- HUD/RADAR Settings -->
+                    <div class="config-card equal-card">
+                        <div class="card-header">
+                            <h3>HUD/RADAR</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="settings-row">
+                                <div class="setting-group">
+                                    <span class="setting-name">HUD Scale</span>
+                                    <strong class="setting-value">1.1</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">HUD Color</span>
+                                    <strong class="setting-value">Aqua</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Radar Centers Player</span>
+                                    <strong class="setting-value">Yes</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Radar is Rotating</span>
+                                    <strong class="setting-value">Yes</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Toggle Shape</span>
+                                    <strong class="setting-value">Yes</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Radar Hud Size</span>
+                                    <strong class="setting-value">1</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Radar Map Zoom</span>
+                                    <strong class="setting-value">0.35</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Launch Options -->
                     <div class="config-card equal-card launch-card">
                         <div class="card-header">
@@ -234,7 +273,7 @@
                             <h3>Advanced Video</h3>
                         </div>
                         <div class="card-content">
-                            <div class="settings-row">
+                            <div class="settings-row optimized-video-settings">
                                 <div class="setting-group">
                                     <span class="setting-name">Resolution</span>
                                     <strong class="setting-value">1280x960</strong>
@@ -264,7 +303,7 @@
                             <!-- Separator -->
                             <div class="settings-separator"></div>
                             
-                            <div class="settings-row">
+                            <div class="settings-row optimized-video-settings">
                                 <div class="setting-group">
                                     <span class="setting-name">Boost Player Contrast</span>
                                     <strong class="setting-value">Enabled</strong>
@@ -434,7 +473,7 @@
                             <h3>Monitor Settings</h3>
                         </div>
                         <div class="card-content">
-                            <div class="settings-row">
+                            <div class="settings-row optimized-video-settings">
                                 <div class="setting-group">
                                     <span class="setting-name">DyAc 2</span>
                                     <strong class="setting-value">Premium</strong>
@@ -498,85 +537,8 @@
             </div>
         </section>
 
-        <!-- HUD/RADAR Settings Section -->
-        <section id="hud-section" class="settings-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>HUD & Radar Settings</h2>
-                </div>
-                
-                <div class="equal-columns-grid">
-                    <!-- HUD Settings -->
-                    <div class="config-card equal-card">
-                        <div class="card-header">
-                            <h3>HUD Configuration</h3>
-                        </div>
-                        <div class="card-content">
-                            <div class="settings-row">
-                                <div class="setting-group">
-                                    <span class="setting-name">HUD Scale</span>
-                                    <strong class="setting-value">1.1</strong>
-                                </div>
-                                <div class="setting-group">
-                                    <span class="setting-name">HUD Color</span>
-                                    <strong class="setting-value">Aqua</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Radar Settings -->
-                    <div class="config-card equal-card">
-                        <div class="card-header">
-                            <h3>RADAR Configuration</h3>
-                        </div>
-                        <div class="card-content">
-                            <div class="settings-row">
-                                <div class="setting-group">
-                                    <span class="setting-name">Radar Centers Player</span>
-                                    <strong class="setting-value">Yes</strong>
-                                </div>
-                                <div class="setting-group">
-                                    <span class="setting-name">Radar is Rotating</span>
-                                    <strong class="setting-value">Yes</strong>
-                                </div>
-                                <div class="setting-group">
-                                    <span class="setting-name">Toggle Shape</span>
-                                    <strong class="setting-value">Yes</strong>
-                                </div>
-                                <div class="setting-group">
-                                    <span class="setting-name">Radar Hud Size</span>
-                                    <strong class="setting-value">1</strong>
-                                </div>
-                                <div class="setting-group">
-                                    <span class="setting-name">Radar Map Zoom</span>
-                                    <strong class="setting-value">0.35</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Download Button Section -->
-        <section class="download-section">
-            <div class="container">
-                <div class="download-card">
-                    <div class="download-content">
-                        <h3>Download Configuration File</h3>
-                        <p>Get the complete ANGELKACS CS2 configuration</p>
-                        <a href="angelkacfg.zip" class="download-btn" download>
-                            <span class="download-icon">⬇️</span>
-                            Download angelkacfg.zip
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Gear Section -->
-        <section class="gear-section">
+        <section id="gear-section" class="settings-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Gear & Equipment</h2>
@@ -629,6 +591,22 @@
                                 <span class="spec-tag">280Hz</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Button Section -->
+        <section class="download-section">
+            <div class="container">
+                <div class="download-card">
+                    <div class="download-content">
+                        <h3>Download Configuration File</h3>
+                        <p>Get the complete ANGELKACS CS2 configuration</p>
+                        <a href="angelkacfg.zip" class="download-btn" download>
+                            <span class="download-icon">⬇️</span>
+                            Download angelkacfg.zip
+                        </a>
                     </div>
                 </div>
             </div>
