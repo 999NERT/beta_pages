@@ -243,6 +243,51 @@ body {
     text-transform: uppercase;
 }
 
+/* === INNER CARDS STYLES === */
+.inner-card {
+    background: rgba(25, 25, 25, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.inner-card-header {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inner-card-header h4 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 0;
+}
+
+.inner-card-content {
+    padding: 1.2rem;
+}
+
+.advanced-video-inner-header {
+    background: linear-gradient(135deg, rgba(0, 255, 67, 0.15), rgba(0, 255, 67, 0.05));
+    border-bottom: 2px solid #00ff43 !important;
+}
+
+.advanced-video-inner-header h4 {
+    color: #00ff43;
+}
+
+.threed-settings-inner-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+    border-bottom: 2px solid #ffd700 !important;
+}
+
+.threed-settings-inner-header h4 {
+    color: #ffd700;
+}
+
 /* === VIDEO SETTINGS HEADER STYLES === */
 .video-cs2-header {
     background: linear-gradient(135deg, rgba(68, 205, 255, 0.2), rgba(68, 205, 255, 0.1)) !important;
@@ -252,34 +297,6 @@ body {
 
 .video-cs2-header h3 {
     color: #44cdff !important;
-    font-size: 1.4rem !important;
-    font-weight: 900 !important;
-    text-align: center;
-    width: 100%;
-}
-
-.advanced-video-header {
-    background: linear-gradient(135deg, rgba(0, 255, 67, 0.2), rgba(0, 255, 67, 0.1)) !important;
-    border-bottom: 2px solid #00ff43 !important;
-    text-align: center;
-}
-
-.advanced-video-header h3 {
-    color: #00ff43 !important;
-    font-size: 1.4rem !important;
-    font-weight: 900 !important;
-    text-align: center;
-    width: 100%;
-}
-
-.threed-settings-header {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1)) !important;
-    border-bottom: 2px solid #ffd700 !important;
-    text-align: center;
-}
-
-.threed-settings-header h3 {
-    color: #ffd700 !important;
     font-size: 1.4rem !important;
     font-weight: 900 !important;
     text-align: center;
