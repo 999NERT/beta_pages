@@ -380,6 +380,23 @@ body {
     flex-shrink: 0;
 }
 
+/* === GAME CONFIGURATION HEADER STYLES === */
+#game-section .card-header {
+    text-align: center;
+    background: rgba(30, 30, 30, 0.95) !important;
+    border-bottom: 2px solid #AEA6FD !important;
+}
+
+#game-section .card-header h3 {
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+
 /* === CONFIG CARDS === */
 .config-card {
     background: rgba(18, 18, 18, 0.95);
@@ -403,12 +420,6 @@ body {
     padding: 1.2rem 1.5rem;
     border-bottom: 1px solid #333;
     flex-shrink: 0;
-}
-
-.card-header h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #ffffff;
 }
 
 .card-content {
