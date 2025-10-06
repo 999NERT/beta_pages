@@ -220,9 +220,9 @@ body {
 }
 
 .video-setting-name {
-    color: #aaa;
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.2;
@@ -232,14 +232,69 @@ body {
 }
 
 .video-setting-value {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-size: 1.15rem !important;
     background: none;
     padding: 0;
     text-align: right;
     white-space: nowrap;
     flex-shrink: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* === VIDEO SETTINGS HEADER STYLES === */
+.advanced-video-header {
+    background: linear-gradient(135deg, rgba(68, 205, 255, 0.2), rgba(68, 205, 255, 0.1)) !important;
+    border-bottom: 2px solid #44cdff !important;
+    text-align: center;
+}
+
+.advanced-video-header h3 {
+    color: #44cdff !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.nvidia-settings-header {
+    background: linear-gradient(135deg, rgba(0, 255, 67, 0.2), rgba(0, 255, 67, 0.1)) !important;
+    border-bottom: 2px solid #00ff43 !important;
+    text-align: center;
+}
+
+.nvidia-settings-header h3 {
+    color: #00ff43 !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.monitor-settings-header {
+    background: linear-gradient(135deg, rgba(255, 159, 87, 0.2), rgba(255, 159, 87, 0.1)) !important;
+    border-bottom: 2px solid #ff9f57 !important;
+    text-align: center;
+}
+
+.monitor-settings-header h3 {
+    color: #ff9f57 !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 100%;
+}
+
+/* Enhanced card headers for video section */
+.video-column .card-header {
+    padding: 1.5rem 1.5rem !important;
+}
+
+.video-column .card-header h3 {
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px;
 }
 
 /* === CONFIG CARDS === */
@@ -425,14 +480,6 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-}
-
-/* === SETTINGS SEPARATOR === */
-.settings-separator {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 1.2rem 0;
-    width: 100%;
 }
 
 /* === LAUNCH OPTIONS CARD === */
