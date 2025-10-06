@@ -20,7 +20,7 @@ body {
 
 /* === LAYOUT === */
 .container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 25px;
 }
@@ -189,8 +189,8 @@ body {
 /* === VIDEO SETTINGS NEW LAYOUT === */
 .video-columns-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(450px, 1fr));
+    gap: 2rem;
     align-items: start;
 }
 
@@ -220,9 +220,9 @@ body {
 }
 
 .video-setting-name {
-    color: #ffffff !important;
-    font-weight: 800 !important;
-    font-size: 1.1rem !important;
+    color: #aaa;
+    font-weight: 600;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.2;
@@ -232,15 +232,14 @@ body {
 }
 
 .video-setting-value {
-    color: #ffffff !important;
-    font-weight: 900 !important;
-    font-size: 1.15rem !important;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
     background: none;
     padding: 0;
     text-align: right;
     white-space: nowrap;
     flex-shrink: 0;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 /* === VIDEO SETTINGS HEADER STYLES === */
@@ -329,7 +328,7 @@ body {
 }
 
 .card-content {
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     flex: 0 1 auto;
     display: flex;
     flex-direction: column;
@@ -681,9 +680,15 @@ body {
 }
 
 /* === RESPONSIVE DESIGN === */
+@media (max-width: 1400px) {
+    .video-columns-grid {
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+    }
+}
+
 @media (max-width: 1200px) {
     .video-columns-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(350px, 1fr));
     }
 }
 
