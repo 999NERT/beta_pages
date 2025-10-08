@@ -17,7 +17,6 @@
                     <div class="profile-main">
                         <div class="profile-info">
                             <div class="profile-header">
-                                <a href="#" class="home-btn">STRÓNA GŁÓWNA</a>
                                 <h2 class="player-name">ANGELKACS</h2>
                             </div>
                             
@@ -46,7 +45,9 @@
                                     <span class="meta-label">Hours</span>
                                 </div>
                                 <div class="meta-item">
-                                    <iframe src="https://faceitlivestats.win/widget-compact?hideRank=false&hideChallenger=false&rounded=false&transparent=false&isGiant=true&nickname=Angelka-" width="220" height="50" frameborder="0"></iframe>
+                                    <div class="faceit-widget-container">
+                                        <iframe src="https://faceitlivestats.win/widget-compact?hideRank=false&hideChallenger=false&rounded=false&transparent=false&isGiant=true&nickname=Angelka-" width="180" height="45" frameborder="0" scrolling="no"></iframe>
+                                    </div>
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-value">Poland</span>
@@ -66,7 +67,10 @@
                     <button class="nav-btn active" data-section="game">GAME</button>
                     <button class="nav-btn" data-section="video">VIDEO</button>
                     <button class="nav-btn" data-section="gear">GEAR</button>
-                    <button class="nav-btn" data-section="config">CONFIG / AUTOEXEC</button>
+                    <button class="nav-btn" data-section="config">FULL CONFIG</button>
+                </div>
+                <div class="home-btn-container">
+                    <a href="https://www.angelkacs.pl" class="home-btn">STRÓNA GŁÓWNA</a>
                 </div>
             </div>
         </section>
@@ -687,17 +691,24 @@
             </div>
         </section>
 
-        <!-- Config / Autoexec Section -->
+        <!-- Full Config Section -->
         <section id="config-section" class="settings-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Config / Autoexec</h2>
+                    <h2>Full Config</h2>
                 </div>
                 
                 <div class="config-content">
                     <div class="config-card autoexec-card">
                         <div class="card-header autoexec-header">
                             <h3>AUTOEXEC.CFG</h3>
+                            <button class="copy-autoexec-btn" title="Copy entire config to clipboard">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy Config
+                            </button>
                         </div>
                         <div class="card-content">
                             <div class="code-editor">
