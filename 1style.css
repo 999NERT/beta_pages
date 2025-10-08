@@ -101,19 +101,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* FaceIT Widget */
-.faceit-widget-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35px;
-}
-
-.faceit-widget-container iframe {
-    border: none;
-    border-radius: 4px;
-}
-
 /* Profile Buttons */
 .profile-social-buttons {
     display: flex;
@@ -248,10 +235,29 @@ body {
     background: rgba(255, 87, 87, 0.25) !important;
 }
 
-.home-btn-container {
+/* Bottom Navigation with FaceIT Widget */
+.bottom-navigation {
     display: flex;
     justify-content: center;
-    margin-top: 0.5rem;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.faceit-widget-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0.3rem;
+    height: 45px;
+}
+
+.faceit-widget-container iframe {
+    border: none;
+    border-radius: 4px;
 }
 
 .home-btn {
@@ -1061,8 +1067,13 @@ body {
         padding: 1.5rem;
     }
     
+    .bottom-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
     .faceit-widget-container {
-        height: 35px;
+        height: 40px;
     }
 }
 
@@ -1139,7 +1150,7 @@ body {
     }
     
     .faceit-widget-container {
-        height: 30px;
+        height: 35px;
     }
 }
 
