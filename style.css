@@ -101,6 +101,14 @@ body {
 }
 
 /* Profile Buttons */
+.profile-buttons-left,
+.profile-buttons-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 100px;
+}
+
 .profile-btn {
     display: inline-flex;
     align-items: center;
@@ -139,6 +147,30 @@ body {
     background: rgba(255, 105, 0, 1);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 105, 0, 0.4);
+}
+
+.mappio-btn {
+    background: rgba(138, 43, 226, 0.8);
+    color: #ffffff;
+    border-color: #8a2be2;
+}
+
+.mappio-btn:hover {
+    background: rgba(138, 43, 226, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.kinghub-btn {
+    background: rgba(255, 215, 0, 0.8);
+    color: #000000;
+    border-color: #ffd700;
+}
+
+.kinghub-btn:hover {
+    background: rgba(255, 215, 0, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
 /* === NAVIGATION BUTTONS === */
@@ -291,48 +323,11 @@ body {
     text-transform: uppercase;
 }
 
-/* === INNER SECTION STYLES === */
-.inner-section {
-    margin-top: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.inner-section-header {
-    padding: 1rem 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.inner-section-header h4 {
-    font-size: 1.1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin: 0;
-}
-
-.inner-section-content {
-    padding: 1.2rem;
-}
-
-.advanced-video-inner-header {
-    background: linear-gradient(135deg, rgba(0, 255, 67, 0.15), rgba(0, 255, 67, 0.05));
-    border-bottom: 2px solid #00ff43 !important;
-}
-
-.advanced-video-inner-header h4 {
-    color: #00ff43;
-}
-
-.threed-settings-inner-header {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
-    border-bottom: 2px solid #ffd700 !important;
-}
-
-.threed-settings-inner-header h4 {
-    color: #ffd700;
+/* Spacing for video settings */
+.spacing-setting {
+    min-height: 30px;
+    border-bottom: none !important;
+    margin: 0.5rem 0;
 }
 
 /* === VIDEO SETTINGS HEADER STYLES === */
@@ -840,6 +835,13 @@ body {
     
     .profile-header {
         flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .profile-buttons-left,
+    .profile-buttons-right {
+        flex-direction: row;
+        justify-content: center;
         gap: 1rem;
     }
     
