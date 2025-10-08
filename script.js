@@ -21,6 +21,9 @@
         
         // Initialize crosshair preview
         setupCrosshairPreview();
+        
+        // Setup autoexec copy functionality
+        setupAutoexecCopy();
     }
     
     function setupNavigation() {
@@ -81,6 +84,28 @@
         });
     }
     
+    function setupAutoexecCopy() {
+        const copyAutoexecBtn = document.querySelector('.copy-autoexec-btn');
+        
+        if (copyAutoexecBtn) {
+            copyAutoexecBtn.addEventListener('click', function() {
+                const autoexecCode = document.querySelector('.autoexec-code');
+                if (!autoexecCode) return;
+                
+                const textToCopy = autoexecCode.textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Visual feedback
+                    showAutoexecCopyFeedback(this);
+                }).catch(err => {
+                    console.error('Failed to copy autoexec: ', err);
+                    fallbackCopyText(textToCopy, this);
+                });
+            });
+        }
+    }
+    
     function showCopyFeedback(button) {
         const originalHTML = button.innerHTML;
         const isWhiteBtn = button.classList.contains('white-copy-btn');
@@ -109,6 +134,31 @@
         }, 1500);
     }
     
+    function showAutoexecCopyFeedback(button) {
+        const originalHTML = button.innerHTML;
+        const originalBackground = button.style.background;
+        const originalBorder = button.style.borderColor;
+        const originalColor = button.style.color;
+        
+        button.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Copied!
+        `;
+        
+        button.style.background = '#00aa00';
+        button.style.borderColor = '#00aa00';
+        button.style.color = '#fff';
+        
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.style.background = originalBackground;
+            button.style.borderColor = originalBorder;
+            button.style.color = originalColor;
+        }, 1500);
+    }
+    
     function fallbackCopyText(text, button) {
         const textArea = document.createElement('textarea');
         textArea.value = text;
@@ -122,7 +172,11 @@
         try {
             const successful = document.execCommand('copy');
             if (successful) {
-                showCopyFeedback(button);
+                if (button.classList.contains('copy-autoexec-btn')) {
+                    showAutoexecCopyFeedback(button);
+                } else {
+                    showCopyFeedback(button);
+                }
             }
         } catch (err) {
             console.error('Fallback copy failed: ', err);
