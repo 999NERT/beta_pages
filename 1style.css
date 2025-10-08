@@ -106,13 +106,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 35px;
 }
 
 .faceit-widget-container iframe {
     border: none;
     border-radius: 4px;
-    transform: scale(1.1);
 }
 
 /* Profile Buttons */
@@ -231,6 +230,22 @@ body {
     background: rgba(174, 166, 253, 0.15);
     border-color: #AEA6FD;
     color: #ffffff;
+}
+
+/* Full Config Button Special Styling */
+.full-config-btn {
+    background: rgba(255, 87, 87, 0.15) !important;
+    border-color: #ff5757 !important;
+}
+
+.full-config-btn.active {
+    background: rgba(255, 87, 87, 0.25) !important;
+    border-color: #ff5757 !important;
+}
+
+.full-config-btn:hover {
+    border-color: #ff5757 !important;
+    background: rgba(255, 87, 87, 0.25) !important;
 }
 
 .home-btn-container {
@@ -449,7 +464,7 @@ body {
     font-family: 'Courier New', monospace;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #ffffff;
     background: rgba(15, 15, 15, 0.95);
     max-height: 600px;
     overflow-y: auto;
@@ -458,7 +473,8 @@ body {
 }
 
 .autoexec-code {
-    color: #e0e0e0;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .download-config-section {
@@ -1046,11 +1062,7 @@ body {
     }
     
     .faceit-widget-container {
-        height: 50px;
-    }
-    
-    .faceit-widget-container iframe {
-        transform: scale(0.9);
+        height: 35px;
     }
 }
 
@@ -1127,11 +1139,7 @@ body {
     }
     
     .faceit-widget-container {
-        height: 45px;
-    }
-    
-    .faceit-widget-container iframe {
-        transform: scale(0.8);
+        height: 30px;
     }
 }
 
