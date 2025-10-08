@@ -17,7 +17,12 @@
                     <div class="profile-main">
                         <div class="profile-info">
                             <div class="profile-header">
-                                <div class="profile-buttons-left">
+                                <a href="#" class="home-btn">STRÓNA GŁÓWNA</a>
+                                <h2 class="player-name">ANGELKACS</h2>
+                            </div>
+                            
+                            <div class="profile-social-buttons">
+                                <div class="social-buttons-group">
                                     <a href="https://steamcommunity.com/id/angelkacs" class="profile-btn steam-btn" target="_blank">
                                         STEAM
                                     </a>
@@ -25,8 +30,7 @@
                                         FACEIT
                                     </a>
                                 </div>
-                                <h2 class="player-name">ANGELKACS</h2>
-                                <div class="profile-buttons-right">
+                                <div class="social-buttons-group">
                                     <a href="https://mappio.com" class="profile-btn mappio-btn" target="_blank">
                                         MAPPIO
                                     </a>
@@ -35,15 +39,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <p class="player-role">CS2 Professional • AWPer</p>
+
                             <div class="player-meta">
                                 <div class="meta-item">
-                                    <span class="meta-value">2,500+</span>
+                                    <span class="meta-value">13.000+</span>
                                     <span class="meta-label">Hours</span>
                                 </div>
                                 <div class="meta-item">
-                                    <span class="meta-value">Global Elite</span>
-                                    <span class="meta-label">Rank</span>
+                                    <iframe src="https://faceitlivestats.win/widget-compact?hideRank=false&hideChallenger=false&rounded=false&transparent=false&isGiant=true&nickname=Angelka-" width="220" height="50" frameborder="0"></iframe>
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-value">Poland</span>
@@ -63,6 +66,7 @@
                     <button class="nav-btn active" data-section="game">GAME</button>
                     <button class="nav-btn" data-section="video">VIDEO</button>
                     <button class="nav-btn" data-section="gear">GEAR</button>
+                    <button class="nav-btn" data-section="config">CONFIG / AUTOEXEC</button>
                 </div>
             </div>
         </section>
@@ -335,6 +339,9 @@
                                     <span class="video-setting-name">HZ</span>
                                     <strong class="video-setting-value">600</strong>
                                 </div>
+                                <div class="video-setting spacing-setting">
+                                    <!-- Pusta przestrzeń -->
+                                </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">BRIGHTNESS</span>
                                     <strong class="video-setting-value">100%</strong>
@@ -419,7 +426,7 @@
                                     <strong class="video-setting-value">GPU</strong>
                                 </div>
                                 <div class="video-setting">
-                                    <span class="video-setting-name">OVVERIDE THE SCALLING...</span>
+                                    <span class="video-setting-name">OVERRIDE THE SCALING...</span>
                                     <strong class="video-setting-value">CHECK</strong>
                                 </div>
                                 <div class="video-setting spacing-setting">
@@ -562,7 +569,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">COLOR TEMPERATURE</span>
-                                    <strong class="video-setting-value">USER DEFINE</strong>
+                                    <strong class="video-setting-value">USER DEFINED</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">RED</span>
@@ -680,17 +687,99 @@
             </div>
         </section>
 
-        <!-- Download Button Section -->
-        <section class="download-section">
+        <!-- Config / Autoexec Section -->
+        <section id="config-section" class="settings-section">
             <div class="container">
-                <div class="download-card">
-                    <div class="download-content">
-                        <h3>Download Configuration File</h3>
-                        <p>Get the complete ANGELKACS CS2 configuration</p>
-                        <a href="angelkacfg.zip" class="download-btn" download>
-                            <span class="download-icon">⬇️</span>
-                            Download angelkacfg.zip
-                        </a>
+                <div class="section-header">
+                    <h2>Config / Autoexec</h2>
+                </div>
+                
+                <div class="config-content">
+                    <div class="config-card autoexec-card">
+                        <div class="card-header autoexec-header">
+                            <h3>AUTOEXEC.CFG</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="code-editor">
+                                <pre class="code-content"><code class="autoexec-code">
+// ANGELKACS CS2 Configuration
+// Autoexec file
+
+// Mouse Settings
+sensitivity "1.5"
+m_rawinput "1"
+m_customaccel "0"
+m_mousespeed "0"
+
+// Crosshair Settings
+cl_crosshair_drawoutline "1"
+cl_crosshairalpha "255"
+cl_crosshaircolor "1"
+cl_crosshaircolor_r "0"
+cl_crosshaircolor_g "255"
+cl_crosshaircolor_b "0"
+cl_crosshairdot "0"
+cl_crosshairgap "-2"
+cl_crosshairsize "2.5"
+cl_crosshairstyle "4"
+cl_crosshairthickness "0.5"
+cl_crosshair_sniper_width "1"
+
+// Viewmodel Settings
+viewmodel_fov "68"
+viewmodel_offset_x "2.5"
+viewmodel_offset_y "0"
+viewmodel_offset_z "-1.5"
+viewmodel_presetpos "0"
+
+// HUD Settings
+hud_scaling "1.1"
+cl_hud_color "0"
+cl_hud_background_alpha "0"
+
+// Radar Settings
+cl_radar_always_centered "1"
+cl_radar_rotate "1"
+cl_radar_scale "0.35"
+cl_hud_radar_scale "1"
+
+// Performance Settings
+fps_max "999"
+cl_forcepreload "1"
+r_dynamic "0"
+
+// Network Settings
+rate "786432"
+cl_cmdrate "128"
+cl_updaterate "128"
+cl_interp "0"
+cl_interp_ratio "1"
+
+// Buy binds
+bind "F1" "buy ak47; buy m4a1; buy famas; buy galilar"
+bind "F2" "buy awp"
+bind "F3" "buy deagle"
+bind "F4" "buy hegrenade; buy flashbang; buy smokegrenade; buy molotov; buy incgrenade"
+
+// Other binds
+bind "MOUSE3" "+voicerecord"
+bind "v" "toggle cl_righthand 0 1"
+
+echo "ANGELKACS Config Loaded"
+                                </code></pre>
+                            </div>
+                            
+                            <div class="download-config-section">
+                                <div class="download-content">
+                                    <h3>Download Configuration File</h3>
+                                    <p>Get the complete ANGELKACS CS2 configuration</p>
+                                    <a href="angelkacfg.zip" class="download-btn" download>
+                                        <span class="download-icon">⬇️</span>
+                                        Download angelkacfg.zip
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
