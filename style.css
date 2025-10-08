@@ -60,7 +60,6 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    position: relative;
 }
 
 .player-name {
@@ -70,41 +69,11 @@ body {
     margin: 0;
 }
 
-.home-btn {
-    position: absolute;
-    left: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease;
-    background: rgba(174, 166, 253, 0.8);
-    color: #ffffff;
-    border: 1px solid #AEA6FD;
-}
-
-.home-btn:hover {
-    background: rgba(174, 166, 253, 1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(174, 166, 253, 0.4);
-}
-
-.profile-social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+.player-role {
+    color: #AEA6FD;
+    font-weight: 600;
     margin-bottom: 1.5rem;
-}
-
-.social-buttons-group {
-    display: flex;
-    gap: 1rem;
+    font-size: 1.1rem;
 }
 
 .player-meta {
@@ -132,7 +101,32 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* FaceIT Widget */
+.faceit-widget-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+.faceit-widget-container iframe {
+    border: none;
+    border-radius: 4px;
+}
+
 /* Profile Buttons */
+.profile-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-buttons-group {
+    display: flex;
+    gap: 1rem;
+}
+
 .profile-btn {
     display: inline-flex;
     align-items: center;
@@ -207,17 +201,17 @@ body {
     justify-content: center;
     gap: 1.5rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
 }
 
 .nav-btn {
     background: rgba(30, 30, 30, 0.95);
     border: 1px solid #333;
-    color: #aaa;
-    padding: 1rem 2rem;
+    color: #ffffff;
+    padding: 1.2rem 2.2rem;
     border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 900;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
     flex: 1;
@@ -228,13 +222,43 @@ body {
 
 .nav-btn:hover {
     border-color: #AEA6FD;
-    color: #fff;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .nav-btn.active {
     background: rgba(174, 166, 253, 0.15);
     border-color: #AEA6FD;
-    color: #AEA6FD;
+    color: #ffffff;
+}
+
+.home-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    background: rgba(174, 166, 253, 0.8);
+    color: #ffffff;
+    border: 1px solid #AEA6FD;
+}
+
+.home-btn:hover {
+    background: rgba(174, 166, 253, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(174, 166, 253, 0.4);
 }
 
 /* === SECTIONS COMMON === */
@@ -358,9 +382,9 @@ body {
     margin: 0.5rem 0;
 }
 
-/* === CONFIG / AUTOEXEC SECTION === */
+/* === FULL CONFIG SECTION === */
 .config-content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -371,15 +395,42 @@ body {
 .autoexec-header {
     background: linear-gradient(135deg, rgba(255, 87, 87, 0.2), rgba(255, 87, 87, 0.1)) !important;
     border-bottom: 2px solid #ff5757 !important;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem !important;
 }
 
 .autoexec-header h3 {
     color: #ff5757 !important;
     font-size: 1.4rem !important;
     font-weight: 900 !important;
-    text-align: center;
-    width: 100%;
+    margin: 0;
+}
+
+.copy-autoexec-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 87, 87, 0.2);
+    border: 1px solid #ff5757;
+    color: #ff5757;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.copy-autoexec-btn:hover {
+    background: rgba(255, 87, 87, 0.3);
+    transform: scale(1.05);
+}
+
+.copy-autoexec-btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 .code-editor {
@@ -392,20 +443,21 @@ body {
 
 .code-content {
     margin: 0;
-    padding: 1.5rem;
+    padding: 2rem;
     overflow-x: auto;
     font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: #e0e0e0;
     background: rgba(15, 15, 15, 0.95);
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .autoexec-code {
     color: #e0e0e0;
-    white-space: pre;
 }
 
 .download-config-section {
@@ -891,16 +943,6 @@ body {
         padding: 1.5rem;
     }
     
-    .profile-header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .home-btn {
-        position: relative;
-        margin-bottom: 1rem;
-    }
-    
     .profile-social-buttons {
         flex-direction: column;
         gap: 1rem;
@@ -921,7 +963,7 @@ body {
     }
     
     .nav-btn {
-        padding: 0.8rem 1.5rem;
+        padding: 1rem 1.8rem;
     }
     
     .equal-columns-grid {
@@ -978,9 +1020,15 @@ body {
         font-size: 0.95rem;
     }
     
+    .autoexec-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
     .code-content {
-        font-size: 0.8rem;
-        padding: 1rem;
+        font-size: 1rem;
+        padding: 1.5rem;
     }
 }
 
@@ -1044,6 +1092,11 @@ body {
     
     .gear-item-value {
         align-self: flex-start;
+    }
+    
+    .code-content {
+        font-size: 0.9rem;
+        padding: 1rem;
     }
 }
 
