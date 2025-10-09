@@ -27,6 +27,9 @@
         
         // Setup binds copy functionality
         setupBindsCopy();
+        
+        // Setup mini launch options copy
+        setupMiniLaunchCopy();
     }
     
     function setupNavigation() {
@@ -67,6 +70,7 @@
                 const commandsContainer = this.closest('.commands-container');
                 const launchContainer = this.closest('.launch-options-container');
                 const bindsContainer = this.closest('.binds-commands-container');
+                const miniLaunch = this.closest('.launch-options-mini');
                 
                 if (commandsContainer) {
                     textToCopy = commandsContainer.querySelector('.commands-text').textContent;
@@ -74,6 +78,8 @@
                     textToCopy = launchContainer.querySelector('.launch-options-text').textContent;
                 } else if (bindsContainer) {
                     textToCopy = bindsContainer.querySelector('.binds-commands-text').textContent;
+                } else if (miniLaunch) {
+                    textToCopy = miniLaunch.querySelector('.launch-options-mini-text').textContent;
                 }
                 
                 if (!textToCopy) return;
@@ -88,6 +94,28 @@
                 });
             });
         });
+    }
+    
+    function setupMiniLaunchCopy() {
+        const miniCopyBtn = document.querySelector('.mini-copy-btn');
+        
+        if (miniCopyBtn) {
+            miniCopyBtn.addEventListener('click', function() {
+                const miniLaunchText = document.querySelector('.launch-options-mini-text');
+                if (!miniLaunchText) return;
+                
+                const textToCopy = miniLaunchText.textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Visual feedback
+                    showCopyFeedback(this);
+                }).catch(err => {
+                    console.error('Failed to copy mini launch options: ', err);
+                    fallbackCopyText(textToCopy, this);
+                });
+            });
+        }
     }
     
     function setupAutoexecCopy() {
@@ -137,14 +165,19 @@
     function showCopyFeedback(button) {
         const originalHTML = button.innerHTML;
         const isWhiteBtn = button.classList.contains('white-copy-btn');
+        const isMiniBtn = button.classList.contains('mini-copy-btn');
         
         button.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="${isMiniBtn ? '16' : '18'}" height="${isMiniBtn ? '16' : '18'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
         `;
         
         if (isWhiteBtn) {
+            button.style.background = '#00aa00';
+            button.style.borderColor = '#00aa00';
+            button.style.color = '#fff';
+        } else if (isMiniBtn) {
             button.style.background = '#00aa00';
             button.style.borderColor = '#00aa00';
             button.style.color = '#fff';
@@ -224,7 +257,7 @@
         
         crosshairElement.innerHTML = '';
         
-        // Crosshair settings from the commands
+        // Crosshair settings from the commands - EXACT values from white commands
         const crosshairStyle = 4; // cl_crosshairstyle 4
         const crosshairSize = 1; // cl_crosshairsize 1
         const crosshairThickness = 0.5; // cl_crosshairthickness 0.5
@@ -234,13 +267,13 @@
         const crosshairColor = '#ffff00'; // cl_crosshaircolor 5 (Yellow)
         const crosshairDot = false; // cl_crosshairdot 0
         
-        // Calculate dimensions based on settings
+        // Calculate dimensions based on EXACT settings
         const armLength = crosshairSize * 3; // Length of crosshair arms
         const gapSize = Math.abs(crosshairGap) * 0.5; // Gap from center
         
         // Create crosshair elements
         if (crosshairStyle === 4) { // Classic Static
-            // Horizontal line
+            // Horizontal line - EXACT implementation
             const horizontalLine = document.createElement('div');
             horizontalLine.style.cssText = `
                 position: absolute;
@@ -252,7 +285,7 @@
                 transform: translate(-50%, -50%);
             `;
             
-            // Vertical line
+            // Vertical line - EXACT implementation
             const verticalLine = document.createElement('div');
             verticalLine.style.cssText = `
                 position: absolute;
@@ -264,7 +297,7 @@
                 transform: translate(-50%, -50%);
             `;
             
-            // Add outline if enabled
+            // Add outline if enabled - EXACT implementation
             if (drawOutline) {
                 const outlineColor = '#000000';
                 
@@ -337,7 +370,7 @@
         // Ctrl+C to copy from focused command container
         if (e.ctrlKey && e.key === 'c') {
             const activeElement = document.activeElement;
-            const commandContainer = activeElement.closest('.commands-container, .launch-options-container, .binds-commands-container');
+            const commandContainer = activeElement.closest('.commands-container, .launch-options-container, .binds-commands-container, .launch-options-mini');
             if (commandContainer) {
                 e.preventDefault();
                 const copyButton = commandContainer.querySelector('.copy-btn');
