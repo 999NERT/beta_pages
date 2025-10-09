@@ -910,29 +910,6 @@ body {
     position: relative;
 }
 
-.crosshair::before,
-.crosshair::after {
-    content: '';
-    position: absolute;
-    background: #00ff00;
-}
-
-.crosshair::before {
-    width: 2px;
-    height: 20px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.crosshair::after {
-    width: 20px;
-    height: 2px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .preview-label {
     color: #AEA6FD;
     font-weight: 600;
