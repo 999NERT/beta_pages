@@ -214,7 +214,7 @@
     }
     
     function setupCrosshairPreview() {
-        // Simple crosshair setup - no heavy animations
+        // Create crosshair based on the new settings
         updateCrosshairPreview();
     }
     
@@ -222,17 +222,19 @@
         const crosshairElement = document.querySelector('.crosshair');
         if (!crosshairElement) return;
         
-        // Simple static crosshair - no dynamic calculations for performance
         crosshairElement.innerHTML = '';
+        
+        // Create crosshair based on style 4 (Classic Static)
+        // Size: 1, Thickness: 0.5, Gap: -2, Outline: 1, Color: 5 (Yellow)
         
         const horizontalLine = document.createElement('div');
         horizontalLine.style.cssText = `
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 20px;
-            height: 2px;
-            background: #00ff00;
+            width: 10px; /* Size 1 */
+            height: 0.5px; /* Thickness 0.5 */
+            background: #ffff00; /* Color 5 - Yellow */
             transform: translate(-50%, -50%);
             box-shadow: 0 0 1px #000;
         `;
@@ -242,13 +244,42 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 2px;
-            height: 20px;
-            background: #00ff00;
+            width: 0.5px; /* Thickness 0.5 */
+            height: 10px; /* Size 1 */
+            background: #ffff00; /* Color 5 - Yellow */
             transform: translate(-50%, -50%);
             box-shadow: 0 0 1px #000;
         `;
         
+        // Add outline if enabled
+        const outlineThickness = 1; // cl_crosshair_outlinethickness 1
+        
+        const horizontalOutline = document.createElement('div');
+        horizontalOutline.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: ${10 + outlineThickness * 2}px;
+            height: ${0.5 + outlineThickness * 2}px;
+            background: #000;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        `;
+        
+        const verticalOutline = document.createElement('div');
+        verticalOutline.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: ${0.5 + outlineThickness * 2}px;
+            height: ${10 + outlineThickness * 2}px;
+            background: #000;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        `;
+        
+        crosshairElement.appendChild(horizontalOutline);
+        crosshairElement.appendChild(verticalOutline);
         crosshairElement.appendChild(horizontalLine);
         crosshairElement.appendChild(verticalLine);
     }
