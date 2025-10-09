@@ -66,12 +66,10 @@
                     <button class="nav-btn active" data-section="game">GAME</button>
                     <button class="nav-btn" data-section="video">VIDEO</button>
                     <button class="nav-btn" data-section="gear">GEAR</button>
+                    <button class="nav-btn" data-section="binds">BINDS</button>
                     <button class="nav-btn full-config-btn" data-section="config">FULL CONFIG</button>
                 </div>
-                <div class="bottom-navigation">
-                    <div class="faceit-widget-container">
-                        <iframe src="https://faceitlivestats.win/widget-compact?hideRank=false&hideChallenger=false&rounded=false&transparent=false&isGiant=true&nickname=Angelka-" width="140" height="35" frameborder="0" scrolling="no"></iframe>
-                    </div>
+                <div class="home-btn-container">
                     <a href="https://www.angelkacs.pl" class="home-btn">STRÓNA GŁÓWNA</a>
                 </div>
             </div>
@@ -140,29 +138,29 @@
                             <div class="settings-row">
                                 <div class="setting-group">
                                     <span class="setting-name">Viewmodel FOV</span>
-                                    <strong class="setting-value">68</strong>
+                                    <strong class="setting-value">66</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Offset X</span>
-                                    <strong class="setting-value">2.5</strong>
+                                    <strong class="setting-value">1.0</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Offset Y</span>
-                                    <strong class="setting-value">0</strong>
+                                    <strong class="setting-value">1.0</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Offset Z</span>
                                     <strong class="setting-value">-1.5</strong>
                                 </div>
                                 <div class="setting-group">
-                                    <span class="setting-name">Shift</span>
-                                    <strong class="setting-value">0.25</strong>
+                                    <span class="setting-name">Preset Position</span>
+                                    <strong class="setting-value">0</strong>
                                 </div>
                             </div>
                             
                             <!-- Viewmodel Commands -->
                             <div class="commands-container white-commands">
-                                <code class="commands-text">viewmodel_fov 68; viewmodel_offset_x 2.5; viewmodel_offset_y 0; viewmodel_offset_z -1.5</code>
+                                <code class="commands-text">viewmodel_fov 66; viewmodel_offset_x 1.0; viewmodel_offset_y 1.0; viewmodel_offset_z -1.5; viewmodel_presetpos 0</code>
                                 <button class="copy-btn white-copy-btn" title="Copy to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -244,41 +242,41 @@
                             <div class="settings-row">
                                 <div class="setting-group">
                                     <span class="setting-name">HUD Scale</span>
-                                    <strong class="setting-value">1.1</strong>
+                                    <strong class="setting-value">0.9</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">HUD Color</span>
-                                    <strong class="setting-value">Aqua</strong>
+                                    <strong class="setting-value">9</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Radar Centers Player</span>
-                                    <strong class="setting-value">Yes</strong>
+                                    <strong class="setting-value">No</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Radar is Rotating</span>
                                     <strong class="setting-value">Yes</strong>
                                 </div>
                                 <div class="setting-group">
-                                    <span class="setting-name">Toggle Shape</span>
+                                    <span class="setting-name">Radar Square with Scoreboard</span>
                                     <strong class="setting-value">Yes</strong>
                                 </div>
                                 <div class="setting-group">
-                                    <span class="setting-name">Radar Hud Size</span>
-                                    <strong class="setting-value">1</strong>
+                                    <span class="setting-name">Radar Icon Scale Min</span>
+                                    <strong class="setting-value">0.4</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Radar Map Zoom</span>
-                                    <strong class="setting-value">0.35</strong>
+                                    <strong class="setting-value">0.475</strong>
                                 </div>
                                 <div class="setting-group">
-                                    <span class="setting-name">safezone x/y</span>
-                                    <strong class="setting-value">1</strong>
+                                    <span class="setting-name">Radar Scale Alternate</span>
+                                    <strong class="setting-value">1.0</strong>
                                 </div>
                             </div>
                             
                             <!-- HUD/RADAR Commands -->
                             <div class="commands-container white-commands">
-                                <code class="commands-text">hud_scaling 1.1; hud_color 0 255 255; cl_radar_always_centered 1; cl_radar_rotate 1; cl_hud_radar_scale 1; cl_radar_scale 0.35</code>
+                                <code class="commands-text">hud_scaling 0.9; cl_hud_color 9; cl_radar_always_centered 0; cl_radar_rotate 1; cl_radar_square_with_scoreboard 1; cl_radar_icon_scale_min 0.4; cl_radar_scale 0.475; cl_radar_scale_alternate 1.0</code>
                                 <button class="copy-btn white-copy-btn" title="Copy to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -370,7 +368,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">MAXIMUM FPS</span>
-                                    <strong class="video-setting-value">999</strong>
+                                    <strong class="video-setting-value">0</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">MULTISAMPLING AA</span>
@@ -693,6 +691,118 @@
             </div>
         </section>
 
+        <!-- Binds Section -->
+        <section id="binds-section" class="settings-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Key Binds</h2>
+                </div>
+                
+                <div class="binds-content">
+                    <div class="config-card binds-card">
+                        <div class="card-header binds-header">
+                            <h3>CUSTOM KEY BINDS</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="binds-grid">
+                                <div class="bind-group">
+                                    <h4>Movement & Utility</h4>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Mouse Wheel Up</span>
+                                        <span class="bind-action">+JUMP</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Mouse Wheel Down</span>
+                                        <span class="bind-action">+JUMP</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 44</span>
+                                        <span class="bind-action">+JUMP</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 16</span>
+                                        <span class="bind-action">NOCLIP</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Mouse Button 5</span>
+                                        <span class="bind-action">PLAYER PING</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bind-group">
+                                    <h4>Weapon Slots</h4>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 6</span>
+                                        <span class="bind-action">Slot 3 + Slot 7</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 29</span>
+                                        <span class="bind-action">Slot 3 + Slot 10</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 33</span>
+                                        <span class="bind-action">Slot 3 + Slot 6</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 27</span>
+                                        <span class="bind-action">Slot 3 + Slot 8</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 39</span>
+                                        <span class="bind-action">Slot 3 + Slot 9</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bind-group">
+                                    <h4>Crosshair & Display</h4>
+                                    <div class="bind-item">
+                                        <span class="bind-key">Scan Code 23</span>
+                                        <span class="bind-action">Toggle Crosshair Size (1-1000)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bind-group">
+                                    <h4>Commented Binds (Alternative)</h4>
+                                    <div class="bind-item commented">
+                                        <span class="bind-key">C</span>
+                                        <span class="bind-action">Slot 3 + Slot 7</span>
+                                    </div>
+                                    <div class="bind-item commented">
+                                        <span class="bind-key">Z</span>
+                                        <span class="bind-action">Slot 3 + Slot 10</span>
+                                    </div>
+                                    <div class="bind-item commented">
+                                        <span class="bind-key">4</span>
+                                        <span class="bind-action">Slot 3 + Slot 6</span>
+                                    </div>
+                                    <div class="bind-item commented">
+                                        <span class="bind-key">X</span>
+                                        <span class="bind-action">Slot 3 + Slot 8</span>
+                                    </div>
+                                    <div class="bind-item commented">
+                                        <span class="bind-key">0</span>
+                                        <span class="bind-action">Slot 3 + Slot 9</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="binds-commands-container">
+                                <code class="binds-commands-text">
+bind "MWHEELUP" "+JUMP"; bind "MWHEELDOWN" "+JUMP"; bind "scancode44" "+JUMP"; bind "scancode16" "noclip"; bind "MOUSE5" "player_ping"; bind "scancode6" "slot3; slot7"; bind "scancode29" "slot3; slot10"; bind "scancode33" "slot3; slot6"; bind "scancode27" "slot3; slot8"; bind "scancode39" "slot3; slot9"; bind "scancode23" "toggle cl_crosshairsize 1 1000"
+                                </code>
+                                <button class="copy-btn" title="Copy all binds to clipboard">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Full Config Section -->
         <section id="config-section" class="settings-section">
             <div class="container">
@@ -715,70 +825,79 @@
                         <div class="card-content">
                             <div class="code-editor">
                                 <pre class="code-content"><code class="autoexec-code">
-// ANGELKACS CS2 Configuration
-// Autoexec file
+echo "A man can be destroyed, but not defeated."
 
-// Mouse Settings
-sensitivity "1.5"
-m_rawinput "1"
-m_customaccel "0"
-m_mousespeed "0"
+sensitivity 1.5
 
-// Crosshair Settings
-cl_crosshair_drawoutline "1"
-cl_crosshairalpha "255"
-cl_crosshaircolor "1"
-cl_crosshaircolor_r "0"
-cl_crosshaircolor_g "255"
-cl_crosshaircolor_b "0"
-cl_crosshairdot "0"
-cl_crosshairgap "-2"
-cl_crosshairsize "2.5"
-cl_crosshairstyle "4"
-cl_crosshairthickness "0.5"
-cl_crosshair_sniper_width "1"
-
-// Viewmodel Settings
-viewmodel_fov "68"
-viewmodel_offset_x "2.5"
-viewmodel_offset_y "0"
-viewmodel_offset_z "-1.5"
-viewmodel_presetpos "0"
-
-// HUD Settings
-hud_scaling "1.1"
-cl_hud_color "0"
-cl_hud_background_alpha "0"
-
-// Radar Settings
-cl_radar_always_centered "1"
-cl_radar_rotate "1"
-cl_radar_scale "0.35"
-cl_hud_radar_scale "1"
-
-// Performance Settings
-fps_max "999"
-cl_forcepreload "1"
-r_dynamic "0"
-
-// Network Settings
 rate "786432"
-cl_cmdrate "128"
-cl_updaterate "128"
-cl_interp "0"
-cl_interp_ratio "1"
+fps_max "0"
+cl_allow_animated_avatars "0"
+cl_sniper_auto_rezoom "1"
+cl_crosshair_recoil "0"
+cl_hud_color "9"
+r_show_build_info  0
+cl_grenadecrosshairdelay_smoke 0 
+cl_grenadecrosshairdelay_explosive 0 
+cl_grenadecrosshairdelay_flash 0 
+cl_grenadecrosshairdelay_fire 0 
+cl_grenadecrosshairdelay_decoy 0
+cl_grenadecrosshair_decoy 0
+cl_grenadecrosshair_flash 0
+cl_grenadecrosshair_fire 0
+cl_grenadecrosshair_smoke 0 
+cl_grenadecrosshair_explosive 0
+cl_grenadecrosshair_keepusercrosshair 0 
 
-// Buy binds
-bind "F1" "buy ak47; buy m4a1; buy famas; buy galilar"
-bind "F2" "buy awp"
-bind "F3" "buy deagle"
-bind "F4" "buy hegrenade; buy flashbang; buy smokegrenade; buy molotov; buy incgrenade"
 
-// Other binds
-bind "MOUSE3" "+voicerecord"
-bind "v" "toggle cl_righthand 0 1"
+viewmodel_presetpos 0
+viewmodel_fov 66
+viewmodel_offset_x 1.000000
+viewmodel_offset_y 1.000000
+viewmodel_offset_z -1.500000
 
-echo "ANGELKACS Config Loaded"
+hud_scaling 0.9
+cl_hud_color 9
+cl_radar_always_centered false
+cl_radar_icon_scale_min	0.400000
+cl_radar_rotate	true
+cl_radar_scale 0.475000
+cl_radar_scale_alternate 1.000000
+cl_radar_square_with_scoreboard	true
+
+
+bind "MWHEELUP" "+JUMP"
+bind "MWHEELDOWN" "+JUMP"
+bind "scancode44" "+JUMP"
+bind "scancode16" "noclip"
+bind "MOUSE5" "player_ping"
+
+
+bind "scancode6" "slot3; slot7"
+bind "scancode29" "slot3; slot10"
+bind "scancode33" "slot3; slot6"
+bind "scancode27" "slot3; slot8" 
+bind "scancode39" "slot3; slot9" 
+bind "scancode23" "toggle cl_crosshairsize 1 1000"
+r_fullscreen_gamma 2
+
+
+// bind "C" "slot3; slot7"
+// bind "z" "slot3; slot10"
+// bind "4" "slot3; slot6"
+// bind "X" "slot3; slot8" 
+// bind "0" "slot3; slot9" 
+
+joystick 0
+
+
+voice_always_sample_mic	false
+voice_modenable	true
+voice_threshold	-30.000000
+
+echo "FIRE IN THE HOLE"
+echo "BE THE BEST YOU CAN"
+echo "NEW DAY NEW OPPORTUNITIES"
+echo "BE CONFIDENT 🙂"
                                 </code></pre>
                             </div>
                             
