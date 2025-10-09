@@ -224,64 +224,97 @@
         
         crosshairElement.innerHTML = '';
         
-        // Create crosshair based on style 4 (Classic Static)
-        // Size: 1, Thickness: 0.5, Gap: -2, Outline: 1, Color: 5 (Yellow)
-        
-        const horizontalLine = document.createElement('div');
-        horizontalLine.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 10px; /* Size 1 */
-            height: 0.5px; /* Thickness 0.5 */
-            background: #ffff00; /* Color 5 - Yellow */
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 1px #000;
-        `;
-        
-        const verticalLine = document.createElement('div');
-        verticalLine.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0.5px; /* Thickness 0.5 */
-            height: 10px; /* Size 1 */
-            background: #ffff00; /* Color 5 - Yellow */
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 1px #000;
-        `;
-        
-        // Add outline if enabled
+        // Crosshair settings from the commands
+        const crosshairStyle = 4; // cl_crosshairstyle 4
+        const crosshairSize = 1; // cl_crosshairsize 1
+        const crosshairThickness = 0.5; // cl_crosshairthickness 0.5
+        const crosshairGap = -2; // cl_crosshairgap -2
+        const drawOutline = true; // cl_crosshair_drawoutline 1
         const outlineThickness = 1; // cl_crosshair_outlinethickness 1
+        const crosshairColor = '#ffff00'; // cl_crosshaircolor 5 (Yellow)
+        const crosshairDot = false; // cl_crosshairdot 0
         
-        const horizontalOutline = document.createElement('div');
-        horizontalOutline.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: ${10 + outlineThickness * 2}px;
-            height: ${0.5 + outlineThickness * 2}px;
-            background: #000;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        `;
+        // Calculate dimensions based on settings
+        const armLength = crosshairSize * 3; // Length of crosshair arms
+        const gapSize = Math.abs(crosshairGap) * 0.5; // Gap from center
         
-        const verticalOutline = document.createElement('div');
-        verticalOutline.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: ${0.5 + outlineThickness * 2}px;
-            height: ${10 + outlineThickness * 2}px;
-            background: #000;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        `;
-        
-        crosshairElement.appendChild(horizontalOutline);
-        crosshairElement.appendChild(verticalOutline);
-        crosshairElement.appendChild(horizontalLine);
-        crosshairElement.appendChild(verticalLine);
+        // Create crosshair elements
+        if (crosshairStyle === 4) { // Classic Static
+            // Horizontal line
+            const horizontalLine = document.createElement('div');
+            horizontalLine.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: ${armLength * 2}px;
+                height: ${crosshairThickness}px;
+                background: ${crosshairColor};
+                transform: translate(-50%, -50%);
+            `;
+            
+            // Vertical line
+            const verticalLine = document.createElement('div');
+            verticalLine.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: ${crosshairThickness}px;
+                height: ${armLength * 2}px;
+                background: ${crosshairColor};
+                transform: translate(-50%, -50%);
+            `;
+            
+            // Add outline if enabled
+            if (drawOutline) {
+                const outlineColor = '#000000';
+                
+                const horizontalOutline = document.createElement('div');
+                horizontalOutline.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: ${(armLength * 2) + (outlineThickness * 2)}px;
+                    height: ${crosshairThickness + (outlineThickness * 2)}px;
+                    background: ${outlineColor};
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                `;
+                
+                const verticalOutline = document.createElement('div');
+                verticalOutline.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: ${crosshairThickness + (outlineThickness * 2)}px;
+                    height: ${(armLength * 2) + (outlineThickness * 2)}px;
+                    background: ${outlineColor};
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                `;
+                
+                crosshairElement.appendChild(horizontalOutline);
+                crosshairElement.appendChild(verticalOutline);
+            }
+            
+            crosshairElement.appendChild(horizontalLine);
+            crosshairElement.appendChild(verticalLine);
+            
+            // Add center dot if enabled
+            if (crosshairDot) {
+                const centerDot = document.createElement('div');
+                centerDot.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: ${crosshairThickness}px;
+                    height: ${crosshairThickness}px;
+                    background: ${crosshairColor};
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                `;
+                crosshairElement.appendChild(centerDot);
+            }
+        }
     }
     
     function setupHoverEffects() {
