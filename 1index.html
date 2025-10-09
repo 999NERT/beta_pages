@@ -17,7 +17,20 @@
                     <div class="profile-main">
                         <div class="profile-info">
                             <div class="profile-header">
-                                <h2 class="player-name">ANGELKACS</h2>
+                                <div class="player-name-container">
+                                    <h2 class="player-name">ANGELKACS</h2>
+                                    <div class="faceit-plugins">
+                                        <h3 class="plugins-title">WTYCZKI FACEIT</h3>
+                                        <div class="plugins-buttons">
+                                            <a href="https://chromewebstore.google.com/detail/faceit-mappio/kaeamgghipbhkjgibgglnmmnobdakapa" class="profile-btn mappio-btn" target="_blank">
+                                                MAPPIO
+                                            </a>
+                                            <a href="https://chromewebstore.google.com/detail/faceit-lobby-king-extensi/ofgabojnfopmlfkfdclajlkgfmomijoc" class="profile-btn lobby-king-btn" target="_blank">
+                                                LOBBY KING
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
                             <div class="profile-social-buttons">
@@ -27,14 +40,6 @@
                                     </a>
                                     <a href="https://www.faceit.com/pl/players/angelkacs" class="profile-btn faceit-btn" target="_blank">
                                         FACEIT
-                                    </a>
-                                </div>
-                                <div class="social-buttons-group">
-                                    <a href="https://mappio.com" class="profile-btn mappio-btn" target="_blank">
-                                        MAPPIO
-                                    </a>
-                                    <a href="https://kinghub.com" class="profile-btn kinghub-btn" target="_blank">
-                                        KINGHUB
                                     </a>
                                 </div>
                             </div>
@@ -63,11 +68,11 @@
         <section class="navigation-section">
             <div class="container">
                 <div class="nav-buttons">
-                    <button class="nav-btn active" data-section="game">GAME</button>
-                    <button class="nav-btn" data-section="video">VIDEO</button>
-                    <button class="nav-btn" data-section="gear">GEAR</button>
+                    <button class="nav-btn game-nav-btn active" data-section="game">GAME</button>
+                    <button class="nav-btn video-nav-btn" data-section="video">VIDEO</button>
+                    <button class="nav-btn gear-nav-btn" data-section="gear">GEAR</button>
                     <button class="nav-btn binds-nav-btn" data-section="binds">BINDS</button>
-                    <button class="nav-btn full-config-btn" data-section="config">FULL CONFIG</button>
+                    <button class="nav-btn config-nav-btn" data-section="config">FULL CONFIG</button>
                 </div>
                 <div class="home-btn-container">
                     <a href="https://www.angelkacs.pl" class="home-btn">STRÓNA GŁÓWNA</a>
@@ -872,7 +877,7 @@ bind "Z" "slot3; slot10"
 bind "4" "slot3; slot6"
 bind "X" "slot3; slot8" 
 bind "0" "slot3; slot9" 
-bind "T" "toggle cl_crosshairsize 1000 1"
+bind "T" "use weapon_smokegrenade"
 
 r_fullscreen_gamma 2
 
