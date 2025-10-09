@@ -41,7 +41,7 @@ body {
     border: 1px solid #333;
     border-radius: 12px;
     padding: 2rem;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
@@ -62,6 +62,14 @@ body {
     margin-bottom: 1rem;
 }
 
+.player-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
 .player-name {
     font-size: 2.5rem;
     font-weight: 900;
@@ -69,11 +77,26 @@ body {
     margin: 0;
 }
 
-.player-role {
+.faceit-plugins {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plugins-title {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: #AEA6FD;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.plugins-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .player-meta {
@@ -166,13 +189,13 @@ body {
     box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
 }
 
-.kinghub-btn {
+.lobby-king-btn {
     background: rgba(255, 215, 0, 0.8);
     color: #000000;
     border-color: #ffd700;
 }
 
-.kinghub-btn:hover {
+.lobby-king-btn:hover {
     background: rgba(255, 215, 0, 1);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
@@ -186,13 +209,13 @@ body {
 .nav-buttons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    max-width: 900px;
+    gap: 1rem;
+    max-width: 1000px;
     margin: 0 auto 1.5rem;
+    flex-wrap: wrap;
 }
 
 .nav-btn {
-    background: rgba(30, 30, 30, 0.95);
     border: 1px solid #333;
     color: #ffffff;
     padding: 1.2rem 1.8rem;
@@ -204,51 +227,101 @@ body {
     flex: 1;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    min-width: 120px;
+    min-width: 140px;
+    text-align: center;
 }
 
 .nav-btn:hover {
-    border-color: #AEA6FD;
-    color: #ffffff;
     transform: translateY(-2px);
 }
 
 .nav-btn.active {
-    background: rgba(174, 166, 253, 0.15);
-    border-color: #AEA6FD;
-    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* Special styling for BINDS button */
+/* Game Button - Blue */
+.game-nav-btn {
+    background: rgba(68, 205, 255, 0.15);
+    border-color: #44cdff !important;
+}
+
+.game-nav-btn:hover {
+    background: rgba(68, 205, 255, 0.25);
+    border-color: #44cdff !important;
+}
+
+.game-nav-btn.active {
+    background: rgba(68, 205, 255, 0.3);
+    border-color: #44cdff !important;
+    box-shadow: 0 4px 15px rgba(68, 205, 255, 0.3);
+}
+
+/* Video Button - Green */
+.video-nav-btn {
+    background: rgba(0, 255, 67, 0.15);
+    border-color: #00ff43 !important;
+}
+
+.video-nav-btn:hover {
+    background: rgba(0, 255, 67, 0.25);
+    border-color: #00ff43 !important;
+}
+
+.video-nav-btn.active {
+    background: rgba(0, 255, 67, 0.3);
+    border-color: #00ff43 !important;
+    box-shadow: 0 4px 15px rgba(0, 255, 67, 0.3);
+}
+
+/* Gear Button - Orange */
+.gear-nav-btn {
+    background: rgba(255, 159, 87, 0.15);
+    border-color: #ff9f57 !important;
+}
+
+.gear-nav-btn:hover {
+    background: rgba(255, 159, 87, 0.25);
+    border-color: #ff9f57 !important;
+}
+
+.gear-nav-btn.active {
+    background: rgba(255, 159, 87, 0.3);
+    border-color: #ff9f57 !important;
+    box-shadow: 0 4px 15px rgba(255, 159, 87, 0.3);
+}
+
+/* Binds Button - Yellow */
 .binds-nav-btn {
-    background: rgba(255, 215, 0, 0.15) !important;
-    border-color: #ffd700 !important;
-}
-
-.binds-nav-btn.active {
-    background: rgba(255, 215, 0, 0.25) !important;
+    background: rgba(255, 215, 0, 0.15);
     border-color: #ffd700 !important;
 }
 
 .binds-nav-btn:hover {
+    background: rgba(255, 215, 0, 0.25);
     border-color: #ffd700 !important;
-    background: rgba(255, 215, 0, 0.25) !important;
 }
 
-/* Full Config Button Special Styling */
-.full-config-btn {
-    background: rgba(255, 87, 87, 0.15) !important;
+.binds-nav-btn.active {
+    background: rgba(255, 215, 0, 0.3);
+    border-color: #ffd700 !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Config Button - Red */
+.config-nav-btn {
+    background: rgba(255, 87, 87, 0.15);
     border-color: #ff5757 !important;
 }
 
-.full-config-btn.active {
-    background: rgba(255, 87, 87, 0.25) !important;
+.config-nav-btn:hover {
+    background: rgba(255, 87, 87, 0.25);
     border-color: #ff5757 !important;
 }
 
-.full-config-btn:hover {
+.config-nav-btn.active {
+    background: rgba(255, 87, 87, 0.3);
     border-color: #ff5757 !important;
-    background: rgba(255, 87, 87, 0.25) !important;
+    box-shadow: 0 4px 15px rgba(255, 87, 87, 0.3);
 }
 
 .home-btn-container {
@@ -1062,6 +1135,24 @@ body {
     
     .profile-card {
         padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .player-name-container {
+        gap: 1rem;
+    }
+    
+    .player-name {
+        font-size: 2rem;
+    }
+    
+    .plugins-title {
+        font-size: 1.2rem;
+    }
+    
+    .plugins-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
     }
     
     .profile-social-buttons {
@@ -1085,6 +1176,7 @@ body {
     
     .nav-btn {
         padding: 1rem 1.8rem;
+        min-width: 100%;
     }
     
     .equal-columns-grid {
@@ -1179,6 +1271,10 @@ body {
     
     .player-name {
         font-size: 1.8rem;
+    }
+    
+    .plugins-title {
+        font-size: 1.1rem;
     }
     
     .profile-btn {
