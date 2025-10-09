@@ -66,7 +66,7 @@
                     <button class="nav-btn active" data-section="game">GAME</button>
                     <button class="nav-btn" data-section="video">VIDEO</button>
                     <button class="nav-btn" data-section="gear">GEAR</button>
-                    <button class="nav-btn" data-section="binds">BINDS</button>
+                    <button class="nav-btn binds-nav-btn" data-section="binds">BINDS</button>
                     <button class="nav-btn full-config-btn" data-section="config">FULL CONFIG</button>
                 </div>
                 <div class="home-btn-container">
@@ -180,11 +180,11 @@
                             <div class="settings-row">
                                 <div class="setting-group">
                                     <span class="setting-name">Style</span>
-                                    <strong class="setting-value">Classic Static</strong>
+                                    <strong class="setting-value">4</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Size</span>
-                                    <strong class="setting-value">2.5</strong>
+                                    <strong class="setting-value">1</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Thickness</span>
@@ -199,8 +199,12 @@
                                     <strong class="setting-value">Yes</strong>
                                 </div>
                                 <div class="setting-group">
+                                    <span class="setting-name">Outline Thickness</span>
+                                    <strong class="setting-value">1</strong>
+                                </div>
+                                <div class="setting-group">
                                     <span class="setting-name">Color</span>
-                                    <strong class="setting-value">Green</strong>
+                                    <strong class="setting-value">5</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">DOT</span>
@@ -210,11 +214,26 @@
                                     <span class="setting-name">ALPHA</span>
                                     <strong class="setting-value">255</strong>
                                 </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Recoil</span>
+                                    <strong class="setting-value">0</strong>
+                                </div>
+                            </div>
+                            
+                            <!-- Crosshair Share Code -->
+                            <div class="commands-container white-commands">
+                                <code class="commands-text">CSGO-JwMy2-Vmzwv-FH69p-ATZdf-8wXDJ</code>
+                                <button class="copy-btn white-copy-btn" title="Copy to clipboard">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
                             </div>
                             
                             <!-- Crosshair Commands -->
                             <div class="commands-container white-commands">
-                                <code class="commands-text">CSGO-JwMy2-Vmzwv-FH69p-ATZdf-8wXDJ</code>
+                                <code class="commands-text">cl_crosshairstyle 4; cl_crosshair_recoil 0; cl_crosshair_drawoutline 1; cl_crosshairdot 0; cl_crosshair_outlinethickness 1; cl_crosshairsize 1; cl_crosshairgap -2; cl_crosshairthickness 0.5; cl_crosshaircolor 5; cl_crosshairalpha 255;</code>
                                 <button class="copy-btn white-copy-btn" title="Copy to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -341,7 +360,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">HZ</span>
-                                    <strong class="video-setting-value">600</strong>
+                                    <strong class="video-setting-value">500</strong>
                                 </div>
                                 <div class="video-setting spacing-setting">
                                     <!-- Pusta przestrzeń -->
@@ -372,11 +391,11 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">MULTISAMPLING AA</span>
-                                    <strong class="video-setting-value">8X MSAA</strong>
+                                    <strong class="video-setting-value">4X MSAA</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">GLOBAL SHADOW QUALITY</span>
-                                    <strong class="video-setting-value">HIGH</strong>
+                                    <strong class="video-setting-value">LOW</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">DYNAMIC SHADOWS</span>
@@ -388,7 +407,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">TEXTURE FILTERING</span>
-                                    <strong class="video-setting-value">ANISOTROPIC 2X</strong>
+                                    <strong class="video-setting-value">TRILINEAR</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">SHADER DETAIL</span>
@@ -400,7 +419,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">AMBIENT OCCLUSION</span>
-                                    <strong class="video-setting-value">DISABLED</strong>
+                                    <strong class="video-setting-value">MEDIUM</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">HIGH DYNAMIC RANGE</span>
@@ -431,7 +450,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">OVERRIDE THE SCALING...</span>
-                                    <strong class="video-setting-value">CHECK</strong>
+                                    <strong class="video-setting-value">YES</strong>
                                 </div>
                                 <div class="video-setting spacing-setting">
                                     <!-- Pusta przestrzeń -->
@@ -478,7 +497,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">LOW LATENCY MODE</span>
-                                    <strong class="video-setting-value">ULTRA</strong>
+                                    <strong class="video-setting-value">OFF</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">MAX FRAME RATE</span>
@@ -494,7 +513,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">SHADER CACHE SIZE</span>
-                                    <strong class="video-setting-value">DRIVER DEFAULT</strong>
+                                    <strong class="video-setting-value">UNLIMITED</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">TEXTURE FILTERING - ANISO</span>
@@ -510,7 +529,7 @@
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">THREADED OPTIMIZATION</span>
-                                    <strong class="video-setting-value">AUTO</strong>
+                                    <strong class="video-setting-value">ON</strong>
                                 </div>
                                 <div class="video-setting">
                                     <span class="video-setting-name">TRIPLE BUFFERING</span>
@@ -704,91 +723,50 @@
                             <h3>CUSTOM KEY BINDS</h3>
                         </div>
                         <div class="card-content">
-                            <div class="binds-grid">
-                                <div class="bind-group">
-                                    <h4>Movement & Utility</h4>
+                            <div class="binds-table">
+                                <div class="binds-column">
+                                    <div class="binds-header-row">
+                                        <span class="binds-column-header">BINDY</span>
+                                        <span class="binds-column-header">ZAWARTOSC</span>
+                                    </div>
                                     <div class="bind-item">
-                                        <span class="bind-key">Mouse Wheel Up</span>
+                                        <span class="bind-key">SPACE</span>
                                         <span class="bind-action">+JUMP</span>
                                     </div>
                                     <div class="bind-item">
-                                        <span class="bind-key">Mouse Wheel Down</span>
-                                        <span class="bind-action">+JUMP</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 44</span>
-                                        <span class="bind-action">+JUMP</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 16</span>
+                                        <span class="bind-key">M</span>
                                         <span class="bind-action">NOCLIP</span>
                                     </div>
                                     <div class="bind-item">
-                                        <span class="bind-key">Mouse Button 5</span>
-                                        <span class="bind-action">PLAYER PING</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="bind-group">
-                                    <h4>Weapon Slots</h4>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 6</span>
-                                        <span class="bind-action">Slot 3 + Slot 7</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 29</span>
-                                        <span class="bind-action">Slot 3 + Slot 10</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 33</span>
-                                        <span class="bind-action">Slot 3 + Slot 6</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 27</span>
-                                        <span class="bind-action">Slot 3 + Slot 8</span>
-                                    </div>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 39</span>
-                                        <span class="bind-action">Slot 3 + Slot 9</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="bind-group">
-                                    <h4>Crosshair & Display</h4>
-                                    <div class="bind-item">
-                                        <span class="bind-key">Scan Code 23</span>
-                                        <span class="bind-action">Toggle Crosshair Size (1-1000)</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="bind-group">
-                                    <h4>Commented Binds (Alternative)</h4>
-                                    <div class="bind-item commented">
                                         <span class="bind-key">C</span>
-                                        <span class="bind-action">Slot 3 + Slot 7</span>
+                                        <span class="bind-action">FLASH</span>
                                     </div>
-                                    <div class="bind-item commented">
+                                    <div class="bind-item">
                                         <span class="bind-key">Z</span>
-                                        <span class="bind-action">Slot 3 + Slot 10</span>
+                                        <span class="bind-action">PALAK</span>
                                     </div>
-                                    <div class="bind-item commented">
+                                    <div class="bind-item">
                                         <span class="bind-key">4</span>
-                                        <span class="bind-action">Slot 3 + Slot 6</span>
+                                        <span class="bind-action">NADE</span>
                                     </div>
-                                    <div class="bind-item commented">
+                                    <div class="bind-item">
                                         <span class="bind-key">X</span>
-                                        <span class="bind-action">Slot 3 + Slot 8</span>
+                                        <span class="bind-action">SMOKE</span>
                                     </div>
-                                    <div class="bind-item commented">
+                                    <div class="bind-item">
                                         <span class="bind-key">0</span>
-                                        <span class="bind-action">Slot 3 + Slot 9</span>
+                                        <span class="bind-action">DECOY</span>
+                                    </div>
+                                    <div class="bind-item">
+                                        <span class="bind-key">T</span>
+                                        <span class="bind-action">CROSSHAIR SMOKE</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="binds-commands-container">
                                 <code class="binds-commands-text">
-bind "MWHEELUP" "+JUMP"; bind "MWHEELDOWN" "+JUMP"; bind "scancode44" "+JUMP"; bind "scancode16" "noclip"; bind "MOUSE5" "player_ping"; bind "scancode6" "slot3; slot7"; bind "scancode29" "slot3; slot10"; bind "scancode33" "slot3; slot6"; bind "scancode27" "slot3; slot8"; bind "scancode39" "slot3; slot9"; bind "scancode23" "toggle cl_crosshairsize 1 1000"
+bind "SPACE" "+JUMP"; bind "M" "noclip"; bind "C" "slot3; slot7"; bind "Z" "slot3; slot10"; bind "4" "slot3; slot6"; bind "X" "slot3; slot8"; bind "0" "slot3; slot9"; bind "T" "use weapon_smokegrenade"
                                 </code>
                                 <button class="copy-btn" title="Copy all binds to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -865,27 +843,19 @@ cl_radar_scale_alternate 1.000000
 cl_radar_square_with_scoreboard	true
 
 
-bind "MWHEELUP" "+JUMP"
-bind "MWHEELDOWN" "+JUMP"
-bind "scancode44" "+JUMP"
-bind "scancode16" "noclip"
-bind "MOUSE5" "player_ping"
+bind "SPACE" "+JUMP"
+bind "M" "noclip"
 
 
-bind "scancode6" "slot3; slot7"
-bind "scancode29" "slot3; slot10"
-bind "scancode33" "slot3; slot6"
-bind "scancode27" "slot3; slot8" 
-bind "scancode39" "slot3; slot9" 
-bind "scancode23" "toggle cl_crosshairsize 1 1000"
+bind "C" "slot3; slot7"
+bind "Z" "slot3; slot10"
+bind "4" "slot3; slot6"
+bind "X" "slot3; slot8" 
+bind "0" "slot3; slot9" 
+bind "T" "toggle cl_crosshairsize 1 1000"
+
 r_fullscreen_gamma 2
 
-
-// bind "C" "slot3; slot7"
-// bind "z" "slot3; slot10"
-// bind "4" "slot3; slot6"
-// bind "X" "slot3; slot8" 
-// bind "0" "slot3; slot9" 
 
 joystick 0
 
