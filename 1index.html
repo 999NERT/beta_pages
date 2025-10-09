@@ -92,7 +92,7 @@
                             <div class="settings-row">
                                 <div class="setting-group">
                                     <span class="setting-name">DPI</span>
-                                    <strong class="setting-value">800</strong>
+                                    <strong class="setting-value">400</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Sensitivity</span>
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">eDPI</span>
-                                    <strong class="setting-value">1200</strong>
+                                    <strong class="setting-value">600</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Zoom Sensitivity</span>
@@ -113,6 +113,10 @@
                                 <div class="setting-group">
                                     <span class="setting-name">WINDOWS SENS</span>
                                     <strong class="setting-value">6/11</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Sniper Crosshair</span>
+                                    <strong class="setting-value">2</strong>
                                 </div>
                             </div>
                             
@@ -211,11 +215,27 @@
                                     <strong class="setting-value">0</strong>
                                 </div>
                                 <div class="setting-group">
-                                    <span class="setting-name">ALPHA</span>
+                                    <span class="setting-name">ALPHA/RGB</span>
                                     <strong class="setting-value">255</strong>
                                 </div>
                                 <div class="setting-group">
                                     <span class="setting-name">Recoil</span>
+                                    <strong class="setting-value">0</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Sniper Delay Scope</span>
+                                    <strong class="setting-value">0</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Sniper Rezoom Auto</span>
+                                    <strong class="setting-value">1</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">New Crosshair Sniper</span>
+                                    <strong class="setting-value">0</strong>
+                                </div>
+                                <div class="setting-group">
+                                    <span class="setting-name">Friendly Warning</span>
                                     <strong class="setting-value">0</strong>
                                 </div>
                             </div>
@@ -233,7 +253,7 @@
                             
                             <!-- Crosshair Commands -->
                             <div class="commands-container white-commands">
-                                <code class="commands-text">cl_crosshairstyle 4; cl_crosshair_recoil 0; cl_crosshair_drawoutline 1; cl_crosshairdot 0; cl_crosshair_outlinethickness 1; cl_crosshairsize 1; cl_crosshairgap -2; cl_crosshairthickness 0.5; cl_crosshaircolor 5; cl_crosshairalpha 255;</code>
+                                <code class="commands-text">cl_crosshairstyle 4; cl_crosshair_recoil 0; cl_crosshair_drawoutline 1; cl_crosshairdot 0; cl_crosshair_outlinethickness 1; cl_crosshairsize 1; cl_crosshairgap -2; cl_crosshairthickness 0.5; cl_crosshaircolor 5; cl_crosshairalpha 255; cl_crosshair_friendly_warning 0; cl_sniper_delay_unscope 0; cl_sniper_auto_rezoom 1; cl_crosshair_sniper_width 0;</code>
                                 <button class="copy-btn white-copy-btn" title="Copy to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -313,7 +333,7 @@
                         </div>
                         <div class="card-content">
                             <div class="launch-options-container">
-                                <code class="launch-options-text">-novid -nojoy -freq 280 -tickrate 128 -high -allow_third_party_software</code>
+                                <code class="launch-options-text">-allow_third_party_software</code>
                                 <button class="copy-btn" title="Copy to clipboard">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -852,7 +872,7 @@ bind "Z" "slot3; slot10"
 bind "4" "slot3; slot6"
 bind "X" "slot3; slot8" 
 bind "0" "slot3; slot9" 
-bind "T" "toggle cl_crosshairsize 1 1000"
+bind "T" "use weapon_smokegrenade"
 
 r_fullscreen_gamma 2
 
