@@ -24,6 +24,9 @@
         
         // Setup autoexec copy functionality
         setupAutoexecCopy();
+        
+        // Setup binds copy functionality
+        setupBindsCopy();
     }
     
     function setupNavigation() {
@@ -63,11 +66,14 @@
                 // Find the text to copy based on the container
                 const commandsContainer = this.closest('.commands-container');
                 const launchContainer = this.closest('.launch-options-container');
+                const bindsContainer = this.closest('.binds-commands-container');
                 
                 if (commandsContainer) {
                     textToCopy = commandsContainer.querySelector('.commands-text').textContent;
                 } else if (launchContainer) {
                     textToCopy = launchContainer.querySelector('.launch-options-text').textContent;
+                } else if (bindsContainer) {
+                    textToCopy = bindsContainer.querySelector('.binds-commands-text').textContent;
                 }
                 
                 if (!textToCopy) return;
@@ -100,6 +106,28 @@
                     showAutoexecCopyFeedback(this);
                 }).catch(err => {
                     console.error('Failed to copy autoexec: ', err);
+                    fallbackCopyText(textToCopy, this);
+                });
+            });
+        }
+    }
+    
+    function setupBindsCopy() {
+        const copyBindsBtn = document.querySelector('.binds-commands-container .copy-btn');
+        
+        if (copyBindsBtn) {
+            copyBindsBtn.addEventListener('click', function() {
+                const bindsCommands = document.querySelector('.binds-commands-text');
+                if (!bindsCommands) return;
+                
+                const textToCopy = bindsCommands.textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Visual feedback
+                    showCopyFeedback(this);
+                }).catch(err => {
+                    console.error('Failed to copy binds: ', err);
                     fallbackCopyText(textToCopy, this);
                 });
             });
@@ -245,7 +273,7 @@
         // Ctrl+C to copy from focused command container
         if (e.ctrlKey && e.key === 'c') {
             const activeElement = document.activeElement;
-            const commandContainer = activeElement.closest('.commands-container, .launch-options-container');
+            const commandContainer = activeElement.closest('.commands-container, .launch-options-container, .binds-commands-container');
             if (commandContainer) {
                 e.preventDefault();
                 const copyButton = commandContainer.querySelector('.copy-btn');
