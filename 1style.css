@@ -59,7 +59,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .player-name-container {
@@ -87,7 +87,7 @@ body {
 .plugins-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #AEA6FD;
+    color: #FF6B9D;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -108,6 +108,11 @@ body {
 
 .meta-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
 }
 
 .meta-value {
@@ -124,19 +129,23 @@ body {
     letter-spacing: 0.5px;
 }
 
+.meta-btn {
+    position: absolute;
+    top: -25px;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.8rem !important;
+    min-width: 60px !important;
+}
+
+.meta-item:nth-child(1) .meta-btn {
+    left: -10px;
+}
+
+.meta-item:nth-child(3) .meta-btn {
+    right: -10px;
+}
+
 /* Profile Buttons */
-.profile-social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.social-buttons-group {
-    display: flex;
-    gap: 1rem;
-}
-
 .profile-btn {
     display: inline-flex;
     align-items: center;
@@ -342,15 +351,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
-    background: rgba(174, 166, 253, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: #ffffff;
-    border: 1px solid #AEA6FD;
+    border: 1px solid #333;
 }
 
 .home-btn:hover {
-    background: rgba(174, 166, 253, 1);
+    background: rgba(30, 30, 30, 0.9);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(174, 166, 253, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* === SECTIONS COMMON === */
@@ -359,12 +368,21 @@ body {
     margin-bottom: 2rem;
 }
 
+.section-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
 .section-header h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
     position: relative;
     display: inline-block;
+    margin: 0;
 }
 
 .section-header h2::after {
@@ -377,6 +395,47 @@ body {
     height: 3px;
     background: #AEA6FD;
     border-radius: 2px;
+}
+
+.launch-options-mini {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(174, 166, 253, 0.1);
+    border: 1px solid rgba(174, 166, 253, 0.3);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+}
+
+.launch-options-mini-text {
+    color: #AEA6FD;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.mini-copy-btn {
+    background: rgba(174, 166, 253, 0.2);
+    border: 1px solid #AEA6FD;
+    color: #AEA6FD;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.mini-copy-btn:hover {
+    background: rgba(174, 166, 253, 0.3);
+    transform: scale(1.05);
+}
+
+.mini-copy-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .settings-section {
@@ -1122,6 +1181,11 @@ body {
     .nav-buttons {
         max-width: 800px;
     }
+    
+    .section-title-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1155,18 +1219,18 @@ body {
         gap: 0.8rem;
     }
     
-    .profile-social-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .social-buttons-group {
-        justify-content: center;
-    }
-    
     .player-meta {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .meta-item {
+        gap: 0.3rem;
+    }
+    
+    .meta-btn {
+        position: static;
+        margin-bottom: 0.5rem;
     }
     
     .nav-buttons {
