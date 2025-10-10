@@ -19,9 +19,6 @@
         // Setup hover effects
         setupHoverEffects();
         
-        // Initialize crosshair preview
-        setupCrosshairPreview();
-        
         // Setup autoexec copy functionality
         setupAutoexecCopy();
         
@@ -244,110 +241,6 @@
         }
         
         document.body.removeChild(textArea);
-    }
-    
-    function setupCrosshairPreview() {
-        // Create crosshair based on the new settings
-        updateCrosshairPreview();
-    }
-    
-    function updateCrosshairPreview() {
-        const crosshairElement = document.querySelector('.crosshair');
-        if (!crosshairElement) return;
-        
-        crosshairElement.innerHTML = '';
-        
-        // Crosshair settings from the commands - EXACT values from white commands
-        const crosshairStyle = 4; // cl_crosshairstyle 4
-        const crosshairSize = 1; // cl_crosshairsize 1
-        const crosshairThickness = 0.5; // cl_crosshairthickness 0.5
-        const crosshairGap = -2; // cl_crosshairgap -2
-        const drawOutline = true; // cl_crosshair_drawoutline 1
-        const outlineThickness = 1; // cl_crosshair_outlinethickness 1
-        const crosshairColor = '#ffff00'; // cl_crosshaircolor 5 (Yellow)
-        const crosshairDot = false; // cl_crosshairdot 0
-        
-        // Calculate dimensions based on EXACT settings
-        const armLength = crosshairSize * 3; // Length of crosshair arms
-        const gapSize = Math.abs(crosshairGap) * 0.5; // Gap from center
-        
-        // Create crosshair elements
-        if (crosshairStyle === 4) { // Classic Static
-            // Horizontal line - EXACT implementation
-            const horizontalLine = document.createElement('div');
-            horizontalLine.style.cssText = `
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: ${armLength * 2}px;
-                height: ${crosshairThickness}px;
-                background: ${crosshairColor};
-                transform: translate(-50%, -50%);
-            `;
-            
-            // Vertical line - EXACT implementation
-            const verticalLine = document.createElement('div');
-            verticalLine.style.cssText = `
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: ${crosshairThickness}px;
-                height: ${armLength * 2}px;
-                background: ${crosshairColor};
-                transform: translate(-50%, -50%);
-            `;
-            
-            // Add outline if enabled - EXACT implementation
-            if (drawOutline) {
-                const outlineColor = '#000000';
-                
-                const horizontalOutline = document.createElement('div');
-                horizontalOutline.style.cssText = `
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: ${(armLength * 2) + (outlineThickness * 2)}px;
-                    height: ${crosshairThickness + (outlineThickness * 2)}px;
-                    background: ${outlineColor};
-                    transform: translate(-50%, -50%);
-                    z-index: -1;
-                `;
-                
-                const verticalOutline = document.createElement('div');
-                verticalOutline.style.cssText = `
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: ${crosshairThickness + (outlineThickness * 2)}px;
-                    height: ${(armLength * 2) + (outlineThickness * 2)}px;
-                    background: ${outlineColor};
-                    transform: translate(-50%, -50%);
-                    z-index: -1;
-                `;
-                
-                crosshairElement.appendChild(horizontalOutline);
-                crosshairElement.appendChild(verticalOutline);
-            }
-            
-            crosshairElement.appendChild(horizontalLine);
-            crosshairElement.appendChild(verticalLine);
-            
-            // Add center dot if enabled
-            if (crosshairDot) {
-                const centerDot = document.createElement('div');
-                centerDot.style.cssText = `
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: ${crosshairThickness}px;
-                    height: ${crosshairThickness}px;
-                    background: ${crosshairColor};
-                    transform: translate(-50%, -50%);
-                    border-radius: 50%;
-                `;
-                crosshairElement.appendChild(centerDot);
-            }
-        }
     }
     
     function setupHoverEffects() {
