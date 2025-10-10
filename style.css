@@ -99,9 +99,9 @@ html, body {
 .betters-highlight { color:#E50420; font-weight:900; }
 
 /* NOWE PRZYCISKI */
-.fcoins-btn a { background:#091A14; color:white; }
-.fcoins-btn a:hover { background:#05DF72; }
-.fcoins-f { color:#005D00; }
+.fcoins-btn a { background:#141619; color:white; }
+.fcoins-btn a:hover { background:#081611; }
+.fcoins-f { color:#05DF72; }
 .fcoins-monet, .fcoins-angelkacs { color:#07E864; font-weight:900; }
 
 .soon-btn a { background:#000000; color:white; }
@@ -149,7 +149,7 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
+  display: none;
 }
 .play-button {
   position: absolute;
@@ -167,7 +167,7 @@ html, body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background: #000;
@@ -292,10 +292,17 @@ html, body {
   background: #ff6b00;
   border: 3px solid #ffd700;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .settings-btn:hover {
   background: #ff8c00;
   transform: scale(1.05);
+}
+.gear-icon {
+  font-size: 50px;
+  color: white;
 }
 
 /* === LIVE / OFFLINE / JOIN === */
