@@ -289,20 +289,37 @@ html, body {
 
 /* NOWY PRZYCISK SETTINGS */
 .settings-btn {
-  background: #ff6b00;
-  border: 3px solid #ffd700;
+  background: #2a2a2a;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #666;
 }
 .settings-btn:hover {
-  background: #ff8c00;
+  background: #3a3a3a;
   transform: scale(1.05);
 }
 .gear-icon {
   font-size: 50px;
-  color: white;
+  color: #ccc;
+}
+
+/* PANEL USTAWIENIA */
+.settings-panel {
+  width: 80px;
+  height: 30px;
+  background: rgba(0,0,0,1);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #666;
+}
+.settings-text {
+  font-weight: 800;
+  font-size: 12px;
+  color: #ccc;
 }
 
 /* === LIVE / OFFLINE / JOIN === */
