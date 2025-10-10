@@ -98,6 +98,15 @@ html, body {
 .betters-ters { color:#E50420; }
 .betters-highlight { color:#E50420; font-weight:900; }
 
+/* NOWE PRZYCISKI */
+.fcoins-btn a { background:#091A14; color:white; }
+.fcoins-btn a:hover { background:#05DF72; }
+.fcoins-f { color:#005D00; }
+.fcoins-monet, .fcoins-angelkacs { color:#07E864; font-weight:900; }
+
+.soon-btn a { background:#000000; color:white; }
+.soon-btn a:hover { background:#808080; }
+
 /* === +18 BADGE === */
 .age-badge, .age-badge-betters {
   position: absolute;
@@ -278,6 +287,17 @@ html, body {
   border: 2px solid #ff4444;
 }
 
+/* NOWY PRZYCISK SETTINGS */
+.settings-btn {
+  background: #ff6b00;
+  border: 3px solid #ffd700;
+  border-radius: 15px;
+}
+.settings-btn:hover {
+  background: #ff8c00;
+  transform: scale(1.05);
+}
+
 /* === LIVE / OFFLINE / JOIN === */
 .live-text {
   font-weight: 800;
@@ -400,3 +420,8 @@ html, body {
   transition: all .2s ease;
 }
 .tmobile-modal-content button:hover { background:#9d356a; }
+
+/* UKRYWANIE ELEMENTÓW */
+.hidden {
+  display: none !important;
+}
