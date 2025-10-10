@@ -82,6 +82,11 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    background: rgba(255, 105, 0, 0.1);
+    border: 1px solid rgba(255, 105, 0, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .plugins-title {
@@ -109,9 +114,9 @@ body {
 .meta-item {
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     position: relative;
 }
 
@@ -130,19 +135,9 @@ body {
 }
 
 .meta-btn {
-    position: absolute;
-    top: -25px;
     padding: 0.4rem 0.8rem !important;
     font-size: 0.8rem !important;
     min-width: 60px !important;
-}
-
-.meta-item:nth-child(1) .meta-btn {
-    left: -10px;
-}
-
-.meta-item:nth-child(3) .meta-btn {
-    right: -10px;
 }
 
 /* Profile Buttons */
@@ -351,15 +346,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
-    background: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
     border: 1px solid #333;
 }
 
 .home-btn:hover {
-    background: rgba(30, 30, 30, 0.9);
+    background: #f0f0f0;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
 
 /* === SECTIONS COMMON === */
@@ -370,9 +365,10 @@ body {
 
 .section-title-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     position: relative;
 }
 
@@ -1014,42 +1010,6 @@ body {
     background: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* === CROSSHAIR PREVIEW === */
-.crosshair-preview {
-    margin-top: 1.2rem;
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(30, 30, 30, 0.8);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.crosshair-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    background: radial-gradient(circle, rgba(40, 40, 40, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
-    border-radius: 6px;
-    margin-bottom: 0.8rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.crosshair {
-    width: 20px;
-    height: 20px;
-    position: relative;
-}
-
-.preview-label {
-    color: #AEA6FD;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 /* === LAUNCH OPTIONS CARD === */
 .launch-card {
     grid-column: 1 / -1;
@@ -1225,12 +1185,8 @@ body {
     }
     
     .meta-item {
+        flex-direction: column;
         gap: 0.3rem;
-    }
-    
-    .meta-btn {
-        position: static;
-        margin-bottom: 0.5rem;
     }
     
     .nav-buttons {
