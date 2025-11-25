@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podpis Stream - angelkacs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6441a5, #2a0845);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .main-content {
+            flex: 3;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .queue-sidebar {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .channel-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #9146ff;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .channel-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .channel-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 1.5rem;
+        }
+
+        .current-user {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #6441a5;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .user-details {
+            flex: 1;
+        }
+
+        .username {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .timestamp {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .message-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #9146ff;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-done {
+            background: #00b894;
+            color: white;
+        }
+
+        .btn-not-done {
+            background: #e84393;
+            color: white;
+        }
+
+        .btn-add {
+            background: #0984e3;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .queue-list {
+            list-style: none;
+        }
+
+        .queue-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .queue-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .queue-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #6441a5;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .queue-username {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .empty-queue {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-pending {
+            background: #fdcb6e;
+        }
+
+        .status-processing {
+            background: #0984e3;
+        }
+
+        .queue-count {
+            background: #e84393;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .add-user-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .form-input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: 2px solid #9146ff;
+        }
+
+        .history-section {
+            margin-top: 30px;
+        }
+
+        .history-list {
+            list-style: none;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-username {
+            font-weight: bold;
+        }
+
+        .history-status {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-completed {
+            background: rgba(0, 184, 148, 0.3);
+            color: #00b894;
+        }
+
+        .status-skipped {
+            background: rgba(232, 67, 147, 0.3);
+            color: #e84393;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .queue-sidebar {
+                max-height: 300px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .channel-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .channel-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="channel-header">
+                <div class="channel-avatar">A</div>
+                <div class="channel-info">
+                    <h1>Podpis Stream - angelkacs</h1>
+                    <p>Zarządzanie kolejką podpisów na Twitchu</p>
+                </div>
+            </div>
+            
+            <div class="current-user">
+                <h2>Aktualna osoba <span class="status-indicator status-processing"></span></h2>
+                
+                <div class="user-info">
+                    <div class="avatar">M</div>
+                    <div class="user-details">
+                        <div class="username">Michał_Streamer</div>
+                        <div class="timestamp">Dodano: 5 minut temu</div>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <div class="message">Hej! Bardzo fajny stream! Proszę o podpis "Najlepszy widz na świecie!" z serduszkiem. Pozdrawiam!</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-done">Zrobione</button>
+                    <button class="btn btn-not-done">Nie zrobione</button>
+                </div>
+            </div>
+            
+            <div class="add-user-form">
+                <h2>Dodaj nową osobę do kolejki</h2>
+                <div class="form-row">
+                    <input type="text" id="newUsername" class="form-input" placeholder="Nazwa użytkownika">
+                    <input type="text" id="newMessage" class="form-input" placeholder="Wiadomość">
+                    <button id="addUserBtn" class="btn btn-add">Dodaj</button>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h2>Ostatnio przetworzone</h2>
+                <ul class="history-list" id="historyList">
+                    <li class="history-item">
+                        <div class="history-username">Tomasz_Fan</div>
+                        <div class="history-status status-completed">Zrobione</div>
+                    </li>
+                    <li class="history-item">
+                        <div class="history-username">Kasia_Viewer</div>
+                        <div class="history-status status-skipped">Nie zrobione</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="queue-sidebar">
+            <h2>Kolejka <span class="queue-count" id="queueCount">3</span></h2>
+            <ul class="queue-list" id="queueList">
+                <li class="queue-item">
+                    <div class="queue-avatar">A</div>
+                    <div class="queue-username">Anna_Gamer</div>
+                </li>
+                <li class="queue-item">
+                    <div class="queue-avatar">P</div>
+                    <div class="queue-username">Piotr_Fan</div>
+                </li>
+                <li class="queue-item">
+                    <div class="queue-avatar">K</div>
+                    <div class="queue-username">Kasia_Viewer</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const queueList = document.getElementById('queueList');
+            const queueCount = document.getElementById('queueCount');
+            const addUserBtn = document.getElementById('addUserBtn');
+            const newUsername = document.getElementById('newUsername');
+            const newMessage = document.getElementById('newMessage');
+            const doneBtn = document.querySelector('.btn-done');
+            const notDoneBtn = document.querySelector('.btn-not-done');
+            const historyList = document.getElementById('historyList');
+            
+            // Funkcja do aktualizacji kolejki
+            function updateQueueCount() {
+                const items = queueList.querySelectorAll('.queue-item');
+                queueCount.textContent = items.length;
+            }
+            
+            // Dodawanie nowej osoby do kolejki
+            addUserBtn.addEventListener('click', function() {
+                const username = newUsername.value.trim();
+                const message = newMessage.value.trim();
+                
+                if (username && message) {
+                    const newItem = document.createElement('li');
+                    newItem.className = 'queue-item';
+                    newItem.innerHTML = `
+                        <div class="queue-avatar">${username.charAt(0)}</div>
+                        <div class="queue-username">${username}</div>
+                    `;
+                    
+                    queueList.appendChild(newItem);
+                    newUsername.value = '';
+                    newMessage.value = '';
+                    
+                    updateQueueCount();
+                    
+                    // Jeśli kolejka była pusta, ustaw tę osobę jako aktualną
+                    if (queueList.children.length === 1) {
+                        updateCurrentUser(username, message);
+                    }
+                } else {
+                    alert('Proszę wpisać nazwę użytkownika i wiadomość!');
+                }
+            });
+            
+            // Funkcja aktualizująca aktualnego użytkownika
+            function updateCurrentUser(username, message) {
+                const currentUser = document.querySelector('.current-user');
+                const avatar = currentUser.querySelector('.avatar');
+                const usernameElement = currentUser.querySelector('.username');
+                const messageElement = currentUser.querySelector('.message');
+                
+                avatar.textContent = username.charAt(0);
+                usernameElement.textContent = username;
+                messageElement.textContent = message;
+                
+                // Ustaw aktualny czas
+                const timestamp = currentUser.querySelector('.timestamp');
+                const now = new Date();
+                timestamp.textContent = `Dodano: ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+            }
+            
+            // Obsługa przycisków "Zrobione" i "Nie zrobione"
+            doneBtn.addEventListener('click', function() {
+                processCurrentUser(true);
+            });
+            
+            notDoneBtn.addEventListener('click', function() {
+                processCurrentUser(false);
+            });
+            
+            // Funkcja przetwarzająca aktualnego użytkownika
+            function processCurrentUser(isDone) {
+                if (queueList.children.length > 0) {
+                    // Pobierz dane aktualnego użytkownika
+                    const currentAvatar = document.querySelector('.avatar').textContent;
+                    const currentUsername = document.querySelector('.username').textContent;
+                    
+                    // Dodaj do historii
+                    const historyItem = document.createElement('li');
+                    historyItem.className = 'history-item';
+                    historyItem.innerHTML = `
+                        <div class="history-username">${currentUsername}</div>
+                        <div class="history-status ${isDone ? 'status-completed' : 'status-skipped'}">${isDone ? 'Zrobione' : 'Nie zrobione'}</div>
+                    `;
+                    
+                    // Dodaj na początek listy historii
+                    historyList.insertBefore(historyItem, historyList.firstChild);
+                    
+                    // Ogranicz historię do 10 ostatnich wpisów
+                    if (historyList.children.length > 10) {
+                        historyList.removeChild(historyList.lastChild);
+                    }
+                    
+                    // Usuń pierwszą osobę z kolejki
+                    queueList.removeChild(queueList.children[0]);
+                    
+                    // Jeśli kolejka nie jest pusta, ustaw następną osobę jako aktualną
+                    if (queueList.children.length > 0) {
+                        const nextUser = queueList.children[0];
+                        const nextUsername = nextUser.querySelector('.queue-username').textContent;
+                        
+                        // W prawdziwej aplikacji tutaj pobieralibyśmy wiadomość z bazy danych
+                        const mockMessages = [
+                            "Super stream! Proszę o podpis z moim nickiem.",
+                            "Hej! Uwielbiam twój kanał. Podpis 'Twój największy fan'?",
+                            "Czy możesz narysować kotka obok mojego podpisu? Dzięki!",
+                            "Podpis z serduszkiem proszę! Oglądam cię od roku!",
+                            "Twoje streamy są najlepsze! Proszę o podpis z datą."
+                        ];
+                        const randomMessage = mockMessages[Math.floor(Math.random() * mockMessages.length)];
+                        
+                        updateCurrentUser(nextUsername, randomMessage);
+                    } else {
+                        // Jeśli kolejka jest pusta, wyczyść aktualnego użytkownika
+                        const currentUser = document.querySelector('.current-user');
+                        const avatar = currentUser.querySelector('.avatar');
+                        const usernameElement = currentUser.querySelector('.username');
+                        const messageElement = currentUser.querySelector('.message');
+                        const timestamp = currentUser.querySelector('.timestamp');
+                        
+                        avatar.textContent = '?';
+                        usernameElement.textContent = 'Brak osób w kolejce';
+                        messageElement.textContent = 'Dodaj nową osobę do kolejki, aby rozpocząć.';
+                        timestamp.textContent = '';
+                    }
+                    
+                    updateQueueCount();
+                } else {
+                    alert('Kolejka jest pusta!');
+                }
+            }
+            
+            // Inicjalizacja
+            updateQueueCount();
+            
+            // Dodawanie za pomocą Enter
+            newMessage.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addUserBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
